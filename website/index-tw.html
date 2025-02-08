@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norka 網站</title>
+    <!-- 導入CSS -->
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <!-- 導入Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- <nav> -->
+    <nav class="navbar">
+        <!--   logo   -->
+        <a href="index-tw.html" class="nav-logo">
+            <img src="img/navbar-logo-0.gif" alt="logo-0">
+        </a>
+        <!--  main-nav   -->
+        <div class="nav-link">
+            <a href="index-tw.html">首頁</a>
+            <div class="dropdown">
+                <a href="#">專案</a>
+                <div class="dropdown-content">
+                    <a href="index-tw.html">個人網站</a>
+                    <!-- ? coming soon  -->
+                    <a href="#project-1">專案-1</a>
+                    <!-- ? coming soon  -->
+                    <a href="#project-2">專案-2</a>
+                </div>
+            </div>
+            <a href="#" class="hire-me-click">聯絡</a>
+            <div class="dropdown">
+                <a href="#"><i class="fa-solid fa-language"></i></a>
+                <div class="dropdown-content">
+                    <a href="index-tw.html">Tw</a>
+                    <a href="index-en.html">En</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <main> -->
+    <main>
+        <!-- social media link -->
+        <div class="link">
+            <ul>
+                <li><a href="https://www.facebook.com" style="--accent-color: #4267B2" ><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://x.com" style="--accent-color: #272727" ><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com" style="--accent-color: #C13584" ><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://github.com" style="--accent-color: #272727" ><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.youtube.com" style="--accent-color: #E50914" ><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <!-- avatar -->
+        <div class="avatar">
+            <img src="img/avatar-0.png" alt="avatar-0" class="avatar-img avatar-img-0">
+            <img src="img/avatar-1.png" alt="avatar-1" class="avatar-img avatar-img-1">
+        </div>
+        <!-- hey -->
+        <div class="hey">
+            <h1>嘿 我是 NORKA</h1>
+            <p>一位前端開發人員專注於使用 HTML、CSS、JavaScript 和 React 等框架，來打造響應式、使用者友善且視覺上引人入勝的 Web 體驗。透過簡潔的程式碼和直覺的設計將想法變成現實。</p>
+        </div>
+        <!-- about me -->
+        <div class="about-me">
+            <p><span>關於我</span><br>作為一名志在成為前端開發人員的新人，雖然尚未擁有正式的工作經驗，但透過勤奮自學，我已建立穩固的前端開發基礎。我通過 HTML、CSS、JavaScript 等核心技術，能夠獨立設計簡潔且具美感的靜態網頁，並打造流暢、直覺且具吸引力的使用者體驗與互動介面。<br><br>此外，我對電腦硬體組裝充滿熱情。從精挑細選相容的處理器、顯示卡等設備，到精心規劃內部佈局與線路整理，我注重細節並享受動手實踐的過程，結合專業知識與精確執行。<br><br>憑藉對技術的熱忱與專業精神，我有信心能迅速適應前端開發角色，在實務中持續學習與成長，並為團隊帶來創新思維與積極能量。</p>
+        </div>
+        <!-- project -->
+        <div class="project">
+            <h2>專案</h2>
+            <div class="image-slider">
+                <div class="slider-images">
+                    <a href="index-tw.html">
+                        <img src="img/project-slider-0.png" alt="project slider 0" class="active">
+                    </a>
+                    <!-- ? coming soon -->
+                    <a href="#project-1">
+                        <img src="img/project-slider-1.png" alt="project slider 1">
+                    </a>
+                    <!-- ? coming soon -->
+                    <a href="#project-2">
+                        <img src="img/project-slider-2.png" alt="project slider 2">
+                    </a>
+                </div>
+                <button class="prev-btn">&lsaquo;</button>
+                <button class="next-btn">&rsaquo;</button>
+                <div class="dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+        <!-- gif -->
+        <div class="gif">
+            <img src="img/GURA-HIRE-ME-PLS.gif" class="hire-me-click" alt="hire me pls">
+        </div>
+        <!-- skill -->
+        <div class="skill">
+            <h1 class="topic">技能樹</h1>
+                <div class="card-box">
+                    <div class="card html">
+                        <div class="circle" style=" --clr:#f16a30;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 90% -->
+                        </div>
+                        <div class="text">HTML</div>
+                    </div>
+                    <div class="card css">
+                        <div class="circle" style=" --clr:#0875bc;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 85% -->
+                        </div>
+                        <div class="text">CSS</div>
+                    </div>
+                    <div class="card js">
+                        <div class="circle" style=" --clr:#68ab1b;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 70% -->
+                        </div>
+                        <div class="text">JavaScript</div>
+                    </div>
+                    <div class="card react">
+                        <div class="circle" style=" --clr:#f16a30;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 60% -->
+                        </div>
+                        <div class="text">React JS</div> 
+                    </div>
+                </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <p>Copyright &copy;2025 Design By <span>NORKA</span></p>
+    </footer>
+    <!-- contact-box -->
+    <div class="contact-box">
+        <form action="" class="contact-box-left">
+            <img src="img/contact-box-img.jpg" no-repeat center>
+        </form>
+        <!-- # web3forms.com -->
+        <!-- # 加入 Gmail API "action & method" -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-box-right">
+            <h2>聯絡我</h2>
+            <!-- # Gmail API Access Key(金鑰) -->
+            <input type="hidden" name="access_key" value="b5f19a88-e23c-4ef5-9ea0-692d9d1861ad">
+            <input type="text"   name="name"  placeholder="您的名字"  class="contact-inputs" required>
+            <input type="email"  name="email" placeholder="您的電子郵件" class="contact-inputs" required>
+            <input type="number" name="phone" placeholder="您的電話" class="contact-inputs" required>
+            <textarea name="message" placeholder="聯絡內容" class="contact-inputs" required></textarea>
+            <button type="submit" class="btn">送出</button>
+        </form>
+    </div>
+</body>
+<!-- # 導入 jQuery ("先"導入jQuery在導入JS) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- # jquery-circle-progress -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+<script src="js/main.js" defer></script>
+</html>

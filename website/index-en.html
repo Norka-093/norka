@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norka Web</title>
+    <!-- 導入CSS -->
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <!-- 導入Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- <nav> -->
+    <nav class="navbar">
+        <!--   logo   -->
+        <a href="index-en.html" class="nav-logo">
+            <img src="img/navbar-logo-0.gif" alt="logo-0">
+        </a>
+        <!--  main-nav   -->
+        <div class="nav-link">
+            <a href="index-en.html">HOME</a>
+            <div class="dropdown">
+                <a href="#">PROJECTS</a>
+                <div class="dropdown-content">
+                    <a href="index-en.html">My Web</a>
+                    <!-- ? coming soon  -->
+                    <a href="#project-1">project-1</a>
+                    <!-- ? coming soon  -->
+                    <a href="#project-2">project-2</a>
+                </div>
+            </div>
+            <a href="#" class="hire-me-click">CONTACT</a>
+            <div class="dropdown">
+                <a href="#"><i class="fa-solid fa-language"></i></a>
+                <div class="dropdown-content">
+                    <a href="index-tw.html">Tw</a>
+                    <a href="index-en.html">En</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- <main> -->
+    <main>
+        <!-- link -->
+        <div class="link">
+            <ul>
+                <li><a href="https://www.facebook.com" style="--accent-color: #4267B2" ><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="https://x.com" style="--accent-color: #272727" ><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com" style="--accent-color: #C13584" ><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://github.com" style="--accent-color: #272727" ><i class="fa-brands fa-github"></i></a></li>
+                <li><a href="https://www.youtube.com" style="--accent-color: #E50914" ><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        <!-- avatar -->
+        <div class="avatar">
+            <img src="img/avatar-0.png" alt="avatar-0" class="avatar-img avatar-img-0">
+            <img src="img/avatar-1.png" alt="avatar-1" class="avatar-img avatar-img-1">
+        </div>
+        <!-- hey -->
+        <div class="hey">
+            <h1>Hey I'm NORKA</h1>
+            <p>A front-end developer focused on creating responsive, user-friendly, and visually engaging web experiences using HTML, CSS, JavaScript, and frameworks like React. I bring ideas to life with clean code and intuitive design.</p>
+        </div>
+        <!-- about-me -->
+        <div class="about-me">
+            <p><span>Introduction</span><br>As an aspiring front-end developer, I may not yet have formal work experience, but through diligent self-study, I have acquired a solid foundation in front-end development. I am proficient in core technologies such as HTML, CSS, and JavaScript, capable of independently designing clean and aesthetically pleasing static web pages while creating smooth, user-friendly, and engaging interactive interfaces.<br><br>Additionally, I have a deep passion for computer hardware assembly. From carefully selecting compatible components such as CPUs and graphics cards to meticulously planning internal layouts and cable management, I take pride in combining technical expertise with attention to detail.<br><br>With a strong commitment to both professionalism and enthusiasm, I am confident in my ability to quickly adapt to a front-end developer role, continuously improving through hands-on experience and contributing creativity and energy to the team.</p>
+        </div>
+        <!-- project -->
+        <div class="project">
+            <h2>Project</h2>
+            <div class="image-slider">
+                <div class="slider-images">
+                    <a href="index-en.html">
+                        <img src="img/project-slider-0.png" alt="project slider 0" class="active">
+                    </a>
+                    <!-- ? coming soon -->
+                    <a href="#project-1">
+                        <img src="img/project-slider-1.png" alt="project slider 1">
+                    </a>
+                    <!-- ? coming soon -->
+                    <a href="#project-2">
+                        <img src="img/project-slider-2.png" alt="project slider 2">
+                    </a>
+                </div>
+                <button class="prev-btn">&lsaquo;</button>
+                <button class="next-btn">&rsaquo;</button>
+                <div class="dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                </div>
+            </div>
+        </div>
+        <!-- gif -->
+        <div class="gif">
+            <img src="img/GURA-HIRE-ME-PLS.gif" class="hire-me-click" alt="hire me pls">
+        </div>
+        <!-- skill -->
+        <div class="skill">
+            <h1 class="topic">Skill Tree</h1>
+                <div class="card-box">
+                    <div class="card html">
+                        <div class="circle" style=" --clr:#f16a30;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 90% -->
+                        </div>
+                        <div class="text">HTML</div>
+                    </div>
+                    <div class="card css">
+                        <div class="circle" style=" --clr:#0875bc;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 85% -->
+                        </div>
+                        <div class="text">CSS</div>
+                    </div>
+                    <div class="card js">
+                        <div class="circle" style=" --clr:#68ab1b;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 70% -->
+                        </div>
+                        <div class="text">JavaScript</div>
+                    </div>
+                    <div class="card react">
+                        <div class="circle" style=" --clr:#f16a30;">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                            <!-- 60% -->
+                        </div>
+                        <div class="text">React JS</div> 
+                    </div>
+                </div>
+        </div>
+    </main>
+    <!-- footer -->
+    <footer class="footer">
+        <p>Copyright &copy;2025 Design By <span>NORKA</span></p>
+    </footer>
+    <!-- contact-box -->
+    <div class="contact-box">
+        <form action="" class="contact-box-left">
+            <img src="img/contact-box-img.jpg" no-repeat center>
+        </form>
+        <!-- # web3forms.com -->
+        <!-- # 加入 Gmail API "action & method" -->
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-box-right">
+            <h2>Contact Me</h2>
+            <!-- # Gmail API Access Key(金鑰) -->
+            <input type="hidden" name="access_key" value="b5f19a88-e23c-4ef5-9ea0-692d9d1861ad">
+            <input type="text"   name="name"  placeholder="Your Name"  class="contact-inputs" required>
+            <input type="email"  name="email" placeholder="Your Email" class="contact-inputs" required>
+            <input type="number" name="phone" placeholder="Your Phone" class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+            <button type="submit" class="btn">Send</button>
+        </form>
+    </div>
+</body>
+<!-- # 導入 jQuery ("先"導入jQuery在導入JS) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- # jquery-circle-progress -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+<script src="js/main.js" defer></script>
+</html>
