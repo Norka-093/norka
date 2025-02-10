@@ -1,0 +1,43 @@
+/* #Color */
+:root   {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+
+}
+/* #RESET */
+*, *::after, *::before  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li  {
+    list-style: none;
+}
+a   {
+    text-decoration: none;
+}
+button, input   {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+a, img, span, table, tbody, button, ion-icon    {
+    display: block;
+}
+body{
+    background-color: var(--white);
+    padding-block-start: 20px;
+    height: 300vh;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: hsl(0, 0%, 95%);
+}
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80%);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
+}
