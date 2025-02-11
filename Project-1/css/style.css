@@ -100,7 +100,42 @@ body {
     background: var(--white);
     position: fixed;
     top: 0;
-    left: 0;
+    left: -280px;
+    z-index: 2;
     width: 100%;
     max-width: 200px;
+    height: 100%;
+    border-right: 3px solid var(--rich-black-fogra-29);
+    overflow-y: auto;   /* 垂直方向上的內容溢出會自動調整 */
+    overscroll-behavior: contain;
+    visibility: hidden; /* 隱藏 box */
+    transition: 0.25s var(--cubic-out);
 }
+.navbar.active {
+    visibility: visible; /* 顯示 box */
+    transform: translateX(280px);
+    transition: 0.5s var(--cubic-in);
+}
+.nav-close-btn {
+    color: var(--rich-black-fogra-29);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 25px;
+    font-size: 25px;
+    transition: var(--transition-1);
+}
+/* .nav-close-btn i {
+    --ionicon-stroke-width: 55px; 
+} */
+.nav-close-btn:is(:hover, :focus){
+    color: var(--maximum-blue-green_10);
+}
+.navbar .logo {
+    background: var(--maximum-blue-green_10);
+    padding: 10px;
+}
+.navbar .logo img{
+    margin-inline: auto;
+}
+/* 20:18 */
