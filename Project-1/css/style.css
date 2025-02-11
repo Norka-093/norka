@@ -1,30 +1,50 @@
-/* #Color */
-:root   {
+:root {
+    /* # Color */
     --white: hsl(0, 0%, 100%);
     --black: hsl(0, 0%, 0%);
+    --blue: hsl(207, 57%, 71%);
+    --bittersweet: hsl(5, 100%, 69%);
+    --salmon: hsl(5, 100%, 73%);
 
+
+    --maximum-blue-green_10: hsla(185, 75%, 45%, 0.1);
+    --rich-black-fogra-29: hsl(217, 28%, 9%);
+    --gray-x-11-gray: hsl(0, 0%, 74%);
+    --oxford-blue_60: hsla(230, 41%, 14%, 0.6);
+    --smoky-black: rgb(7, 6, 1);
+    --gainsboro: hsl(0, 0%, 88%);
+    --black_90: hsla(0, 0%, 0%, 0.9);
+    --cultured: hsl(200, 12%, 95%);
+    --onyx: hsl(0, 0%, 27%);
+
+
+    /* # transition */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease;
+    --cubic-out: cubic-bezier(0.51, 0.03, 0.64, 0.28);
+    --cubic-in: cubic-bezier(0.33, 0.85, 0.56, 1.02);
 }
-/* #RESET */
-*, *::after, *::before  {
+/* # RESET */
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-li  {
+li {
     list-style: none;
 }
-a   {
+a {
     text-decoration: none;
 }
-button, input   {
+button, input {
     cursor: pointer;
     border: none;
     background: none;
 }
-a, img, span, table, tbody, button, ion-icon    {
+a, img, span, table, tbody, button, ion-icon {
     display: block;
 }
-body{
+body {
     background-color: var(--white);
     padding-block-start: 20px;
     height: 300vh;
@@ -40,4 +60,47 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover {
     background: hsl(0, 0%, 70%);
+}
+
+/* # Main */
+/* ? .overlay 用處不明 */
+.overlay {
+    display: none;
+}
+.header {
+    background: var(--blue);
+    position: fixed;    /*相對於瀏覽器視窗來定位，固定在相同的位置*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    transition: var(--transition-1);
+}
+.header.active {
+    box-shadow: 0 2px 10px hsl(0, 0%, 0%, 0.5);
+} 
+.header .container{
+    padding-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 20px;
+}
+.nav-open-btn {
+    background: var(--bittersweet);
+    color: var(--white);
+    padding: 10px;
+    font-size: 20px;
+}
+.nav-open-btn:is(:hover, :focus) {
+    /* # :hover 暫時性，:focus 持續性 */
+    background: var(--salmon);
+}
+.navbar {
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 200px;
 }
