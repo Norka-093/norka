@@ -232,6 +232,6 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-image: url('img/hero-banner.jpg');
+    background-image: url('/Project-1/img/hero-banner.png');
 }
 
