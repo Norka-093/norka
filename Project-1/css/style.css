@@ -190,6 +190,10 @@ body {
 .nav-action-btn i {
     font-size: 22px;
     width: 25px;
+    /* # 讓 3個圖標水平垂直置中 */
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center;     /* 垂直居中 */
 }
 .nav-action-text{
     font-weight: initial;
