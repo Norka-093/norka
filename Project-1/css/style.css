@@ -47,6 +47,37 @@
     /* # space */
     --section-padding: 60px;
 }
+/* # 重複 */
+.h1, .h2, .h3, .h4 {
+    color: var(--rich-black-fogra-29);
+}
+.h1{
+    font-size: var(--fs-1);
+    font-weight: var(--fw-300);
+    line-height: 1.5;
+}
+.h2 {
+    font-style: var(--fs-2);
+}
+.h3 {
+    font-style: var(--fs-3);
+}
+.h4 {
+    font-style: var(--fs-4);
+    text-transform: uppercase;
+}
+.btn{
+    background: var(--bittersweet);
+    color: var(--white);
+    font-size: var(--fs-5);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 14px 25px;
+    border: 2px solid var(--gray-x-11-gray);
+}
+/* 31:45 */
+
 /* # RESET */
 *, *::after, *::before {
     margin: 0;
@@ -235,19 +266,32 @@ main {
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    min-width: 400px;
+    background-position:left;
+    width: 100%;
+    /* min-width: 400px; */
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 .hero .container {
-    height: 70vh;
-    padding-inline: 20px;
+    /* height: 70vh; */
+    padding-inline: 30px;
 }
 .hero-title {
     margin-bottom: 10px;
 }
+.hero-title > strong {
+    display: block;
+}
 .section {
     padding-block: var(--section-padding);
 }
+.hero-text {
+    color: var(--onyx);
+    font-family: var(--ff-roboto);
+    font-size: var(--fs-8);
+    line-height: 1.8;
+    max-width: 46ch;
+    margin-bottom: 25px;
+}
+
