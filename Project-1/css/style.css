@@ -81,7 +81,7 @@ body {
     background: hsl(0, 0%, 70%);
 }
 
-/* # Main */
+/* # header */
 .header {
     background: var(--blue);
     position: fixed;    /*相對於瀏覽器視窗來定位，固定在相同的位置*/
@@ -90,6 +90,7 @@ body {
     width: 100%;
     z-index: 4;
     transition: var(--transition-1);
+    opacity: 0;
 }
 .header.active {
     box-shadow: 0 2px 10px hsl(0, 0%, 0%, 0.5);
@@ -222,3 +223,15 @@ body {
     opacity: 1;
     pointer-events: all;
 }
+/* # hero */
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    min-width: 400px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url('img/hero-banner.jpg');
+}
+
