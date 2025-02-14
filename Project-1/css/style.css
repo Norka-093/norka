@@ -308,26 +308,28 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 350px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding-block: 45px 25px;
+
 }
 .has-scrollbar {
     display: flex;
     gap: 25px;
     overflow-x: auto;
-    scroll-snap-type: inline mandatory;
-    padding-bottom: 20px;
+    scroll-snap-type: inline proximity;
+    padding: 20px;
+    scroll-behavior: smooth; /* 添加平滑滾動效果 */
 }
 .has-scrollbar > li {
     min-width: 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 }
 .has-scrollbar::-webkit-scrollbar {
-    height: 10px;
+    height: 15px;
 }
 .has-scrollbar::-webkit-scrollbar-track {
     background: var(--white);
@@ -351,3 +353,5 @@ main {
 .collection-list li:last-child .card-title{
     color: var(--onyx);
 }
+/* # porject */
+/* 37:49 */
