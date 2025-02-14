@@ -76,8 +76,17 @@
     padding: 14px 25px;
     border: 2px solid var(--gray-x-11-gray);
 }
-/* 31:45 */
-
+.btn-primary:is(:hover, :fouce) {
+    background: var(--salmon);
+}
+.btn-secondary {
+    background: transparent;
+    border-color: var(--black);
+    color: var(--black);
+}
+.btn-secondary:is(:hover, :fouce) {
+    background: hsl(0, 0%, 0%, 0.5);
+}
 /* # RESET */
 *, *::after, *::before {
     margin: 0;
