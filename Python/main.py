@@ -28,5 +28,6 @@ input("按回車鍵關閉瀏覽器...")
 driver.quit()
 
 
-# 指令 : 安裝 查看
-# selenium
+# 安裝指令 : pip install selenium
+# 查看指令 : pip show selenium
+# 刪除指令 : pip uninstall selenium
