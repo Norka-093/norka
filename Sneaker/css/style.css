@@ -1,1 +1,115 @@
-/* New Project / Start at 2025/02/18 */
+/* # New Project / Start at 2025/02/18 */
+/* import icon */
+/* menu */
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+/* cart, search */
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+/* ************** */
+/* ************** */
+/* # reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cabin', sans-serif ;
+    scroll-padding-top: 4rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+}
+/* ************** */
+/* ************** */
+/* # 全域 */
+:root {
+    /* color */
+    --main-color: #bc9667;
+    --second-color: #edeae3;
+    --bg-color: #fff;
+
+    /* header color */
+    --header-color-1: #1b1b1b;
+    /* font color */
+    --font-color-1: #c5c5c5;
+
+    /* testing color */
+    --test-bg-color: red;
+
+    /* transition */
+    --transition-1: 0.5s linear;
+    --transition-2: 0.2s all linear;
+
+
+}
+img {
+    width: 100%;
+}
+body {
+    color: var(--header-color-1);
+}
+/* ************** */
+/* ************** */
+header{
+    position: fixed; /* 固定於頁面最上方 */
+    z-index: 100;    /* 在所有元素最上方 */
+    width: 100%;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 100px;
+    background-color: var(--header-color-1);
+    transition: var(--transition-1);
+}
+.header-logo {
+    width: 80px;
+}
+.menu-link {
+    display: flex;
+}
+.menu-link a {
+    padding: 8px 15px;
+    color: var(--font-color-1);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.menu-link a:is(:hover, :fouce) {
+    background: var(--main-color);
+    border-radius: 0.2rem;
+    transition: var(--transition-2);
+}
+.header-icon {
+    color: var(--font-color-1);
+    font-size: 1.3rem;
+    line-height: 1.1rem;
+
+    display: flex;
+    column-gap: 1rem;
+    padding-inline: 8px;
+}
+.header-icon i:is(:hover, :fouce) {
+    cursor: pointer;
+    color: var(--main-color);
+}
+#menu-icon {
+    color: var(--font-color-1);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+    display: none;
+}
+#menu-icon:is(:hover, :fouce) {
+    color: var(--main-color);
+}
+.search-box {
+    position: absolute;
+    top: 100%;
+    right: 22px;
+}
