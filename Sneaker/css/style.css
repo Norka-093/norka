@@ -40,17 +40,20 @@
     /* transition */
     --transition-1: 0.5s linear;
     --transition-2: 0.2s all linear;
-
-
+}
+section {
+    padding: 50px 100px;
 }
 img {
     width: 100%;
+    /* height: 100%; */
 }
 body {
     color: var(--header-color-1);
 }
 /* ************** */
 /* ************** */
+/* # navbar */
 header{
     position: fixed; /* 固定於頁面最上方 */
     z-index: 100;    /* 在所有元素最上方 */
@@ -77,7 +80,7 @@ header{
     text-transform: uppercase;
     font-weight: 500;
 }
-.menu-link a:is(:hover, :fouce) {
+.menu-link a:is(:hover, :focus) {
     background: var(--main-color);
     border-radius: 0.2rem;
     transition: var(--transition-2);
@@ -91,7 +94,7 @@ header{
     column-gap: 1rem;
     padding-inline: 8px;
 }
-.header-icon i:is(:hover, :fouce) {
+.header-icon i:is(:hover, :focus) {
     cursor: pointer;
     color: var(--main-color);
 }
@@ -103,13 +106,66 @@ header{
     justify-content: center;
     align-items: center;
     padding: 8px 15px;
-    display: none;
+    /* display: none; */
 }
-#menu-icon:is(:hover, :fouce) {
+#menu-icon:is(:hover, :focus) {
     color: var(--main-color);
 }
 .search-box {
     position: absolute;
     top: 100%;
-    right: 22px;
+    left: 50%;
+    transform: translate(-50%);
+    background: var(--bg-color);
+    width: 100%;
+}
+.search-box input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: var(--main-color);
+}
+.search-box input::placeholder {
+    font-size: 1rem;
+    font-weight: 500;
+}
+/* ************** */
+/* ************** */
+/* # home */
+.home {
+    width: 100%;
+    min-height: 100vh;
+    background: url("/Sneaker/img/home-banner.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+.home-text h1 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow:  3px 3px 0 rgb(117, 79, 25);
+    /* text-shadow: 水平偏移 | 垂直偏移 | 模糊程度 | 顏色 */
+}
+.home-text p {
+    font-size: 0.9rem;
+    color: var(--bg-color);
+    margin: 0.5rem 0 1.4rem;
+    text-shadow: 1px 1px 0 black;
+}
+.btn {
+    padding: 10px 40px;
+    border-radius: 0.3rem;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 500;
+    text-shadow: 1px 1px 0 black;
+
 }
