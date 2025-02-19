@@ -313,6 +313,14 @@ header{
     gap: 1.5rem;
     margin-top: 2rem;
 }
+.customer-title h2{
+    font-size: 3.4rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow:  3px 3px 0 rgb(117, 79, 25);
+    text-align: center;
+}
 .customer-card {
     padding: 20px;
     box-shadow: var(--box-shadow);
@@ -354,6 +362,74 @@ header{
 }
 /* ************** */
 /* ************** */
+/* # information */
+.information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    /* grid-template-columns: 2fr 1fr 1fr 2fr;  */
+    column-gap: 2rem;
+    /* margin-top: 2rem; */
+}
+.information-box {
+    /* border: 1px solid #404040; */
+    text-align: center;
+    padding: 0 1.2rem;
+}
+.information-box-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.information-box-content p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+.information-social-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.information-social-icon i {
+    font-size: 24px;
+    color: var(--font-color-2);
+    background: var(--second-color);
+    padding: 10px;
+    border-radius: 0.2rem;
+}
+.information-social-icon i:is(:hover, :focus) {
+    color: var(--second-color);
+    background: var(--main-color);
+}
+.information-box-content li {
+ padding-bottom: 15px;   
+}
+.information-box-content li a{
+    color: var(--font-color-2);
+    /* font-size: 18px; */
+}
+.information-box-content li a:is(:hover, :focus) {
+    color: var(--main-color);
+}
+.information-box-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.5rem;
+}
+.information-box-contact i {
+    font-size: 20px;
+    margin-right: 1rem;
+}
+/* ************** */
+/* ************** */
 /* # footer */
-
-/* 30:17 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    color: var(--font-color-2);
+    background: var(--second-color);
+}
+/* ************** */
+/* ************** */
+/* 38:39 */
