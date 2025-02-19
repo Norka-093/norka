@@ -1,12 +1,4 @@
 /* # New Project / Start at 2025/02/18 */
-/* import icon */
-/* menu */
-@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
-/* cart, search */
-@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
-
-/* import font */
-@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
 /* ************** */
 /* ************** */
 /* # reset */
@@ -37,6 +29,8 @@
     --font-color-1: #c5c5c5;
     --font-color-2: #1c1c1c;
     --font-color-3: rgb(255, 83, 83);
+    /* icon */
+    --icon-color-1: #ffc241;
     
     /* card bg */
     /* card img bg*/
@@ -283,9 +277,11 @@ header{
     background: var(--card-img-bg-1);
     border-radius: 8px;
 }
-.product-card:is(:hover, :focus) img {
-    transform: translate(1.5);
-}
+/* ! 功能未完成 */
+/* .product-card img:is(:hover, :focus) {
+    transform: scale(1.5);
+    overflow: hidden;
+} */
 .product-card h3 {
     font-size: 1.1rem;
     font-weight: 700;
@@ -311,4 +307,53 @@ header{
 /* ************** */
 /* ************** */
 /* # customer */
+.customer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.customer-card {
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+}
+.customer-card:is(:hover, :focus) {
+    background: var(--second-color);
+    transition: var(--transition-2);
+}
+.customer-card img {
+    width: auto;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    background: var(--card-img-bg-1);
+    border-radius: 8px;
+}
+.customer-card-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.customer-card-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    gap: 10px;
+}
+.customer-icon {
+    color: var(--icon-color-1);
+}
+/* ************** */
+/* ************** */
+/* # footer */
 
+/* 30:17 */
