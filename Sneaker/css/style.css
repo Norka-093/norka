@@ -61,6 +61,7 @@ body {
     color: var(--header-color-1);
 }
 .btn {
+    /* display: flexbox; */
     padding: 10px 40px;
     border-radius: 5px;
     border: 1px solid #404040;
@@ -188,7 +189,7 @@ header{
 .home-text p {
     font-size: 1.2rem;
     color: var(--bg-color);
-    margin: 0.5rem 0 1.4rem;
+    margin: 1rem 0;
     text-shadow: 1px 1px 0 black;
     text-align: justify;
 }
@@ -201,7 +202,7 @@ header{
     /* 使 .home-btn 靠右*/
 }
 .home-img img {
-    border-radius: 5px;
+    border-radius: 10px;
 }
 /* ************** */
 /* ************** */
@@ -215,7 +216,11 @@ header{
     /* 讓 about 區塊從 home 區塊下方 80px 開始 */
 }
 .about-img img{
-    border-radius: 5px;
+    border-radius: 10px;
+}
+.about-text {
+    display: flex;
+    flex-direction: column;
 }
 .about-text h2 {
     font-size: 3.4rem;
@@ -228,11 +233,39 @@ header{
 .about-text p {
     font-size: 1.2rem;
     color: var(--font-color-2);
-    margin: 0.5rem 0 1.4rem;
+    margin: 1rem 0;
     /* text-shadow: 1px 1px 0 black; */
     text-align: justify;
+}
+.about-btn {
+    margin-right: auto;
 }
 /* ************** */
 /* ************** */
 /* # product */
-
+.product-title {
+    text-align: center;
+}
+.product-title h2 {
+    font-size: 3.4rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow:  3px 3px 0 rgb(117, 79, 25);
+    text-align: center;
+}
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.product-card {
+    background-color: aqua;
+    position: relative;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+}
