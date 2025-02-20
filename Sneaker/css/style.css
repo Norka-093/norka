@@ -53,6 +53,7 @@ section {
 }
 img {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -180,6 +181,7 @@ body {
 }
 .home-text h1 {
     font-size: 3.4rem;
+    font-weight: bold;
     color: var(--main-color);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -189,6 +191,7 @@ body {
 }
 .home-text p {
     font-size: 1.4rem;
+    font-weight: bold;
     color: var(--bg-color);
     margin: 1rem 0;
     text-shadow: 1px 1px 0 black;
