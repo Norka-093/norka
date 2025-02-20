@@ -336,7 +336,7 @@ body {
 /* # enthusiast */
 .enthusiast-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(330px, auto));
     gap: 1.5rem;
     margin-top: 2rem;
 }
@@ -355,6 +355,7 @@ body {
     text-align: center;
     display: flex;
     flex-direction: row;
+    gap: 10px;
     /* height: 500px; */
 }
 .enthusiast-card:is(:hover, :focus) {
@@ -377,7 +378,7 @@ body {
     align-items: center;
 }
 .enthusiast-card-right {
-    flex: 1.5;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -467,9 +468,18 @@ body {
         padding: 16px 60px;
     }
     section {
-        padding: 20px 60px;
+        padding: 30px 60px;
     }
     .home-text h1 {
+        font-size: 2.4rem;
+    }
+    .about-text h2 {
+        font-size: 2.4rem;
+    }
+    .sneaker-title h2 {
+        font-size: 2.4rem;
+    }
+    .enthusiast-title h2 {
         font-size: 2.4rem;
     }
 }
@@ -478,9 +488,18 @@ body {
         padding: 16px 4%;
     }
     section {
-        padding: 20px 4%;
+        padding: 30px 4%;
     }
     .home-text h1 {
+        font-size: 2rem;
+    }
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .sneaker-title h2 {
+        font-size: 2rem;
+    }
+    .enthusiast-title h2 {
         font-size: 2rem;
     }
 }
@@ -501,7 +520,7 @@ body {
         padding: 12px 4%;
     }
     section {
-        padding: 15px 4%;
+        padding: 25px 4%;
     }
     #menu-icon {
         display: initial;
@@ -537,6 +556,18 @@ body {
     }
     .enthusiast-title h2 {
         font-size: 2rem;
+    }
+}
+/* 543px ~ 743px enthusiast-container 換行 */
+@media (min-width: 543px) and (max-width: 743px) {
+    .enthusiast-container {
+        grid-template-columns: repeat(auto-fit, minmax(500px, auto));
+    }
+}
+@media (max-width: 674px) {
+    .about-img {
+        /* about-img 與 about-text 位置互換 */
+        order: 2;
     }
 }
 @media (max-width: 542px) {
@@ -576,7 +607,7 @@ body {
         width: 60px;
     }
     section {
-        padding: 15px 4%;
+        padding: 25px 4%;
     }
     .home-text {
         padding-top: 15px;
@@ -588,10 +619,6 @@ body {
     .home-text p {
         font-size: 0.8rem;
         font-weight: 300;
-    }
-    .about-img {
-        /* about-img 與 about-text 位置互換 */
-        order: 2;
     }
     .about-text h2 {
         font-size: 1.4rem;
