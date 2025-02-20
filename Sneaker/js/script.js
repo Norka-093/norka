@@ -9,7 +9,6 @@ document.querySelector('#search-icon').onclick = () => {
     // .search-box & .menu-link 同一時間只會顯示其中 1 個
 }
 
-
 // # @media (max-width: 768px) > 顯示與隱藏 .menu-link
 const menu =document.querySelector('.menu-link');
 
@@ -37,19 +36,19 @@ document.addEventListener('click', function (event) {
     }
 });
 
-// # 控制 .product-card 顯示與更換
-const productCards = document.querySelectorAll('.product-card');
+// # 控制 .sneaker-card 顯示與更換
+const sneakerCards = document.querySelectorAll('.sneaker-card');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 let currentPage = 0;
 const cardsPerPage = 6; 
-// cardsPerPage 顯示 6個 product-card
+// cardsPerPage 顯示 6個 sneaker-card
 
-// # 跳轉至 .product 的頂部
-const productElement = document.querySelector('.product');
+// # 跳轉至 .sneaker 的頂部
+const sneakerElement = document.querySelector('.sneaker');
 
 function showCards() {
-    productCards.forEach((card, index) => {
+    sneakerCards.forEach((card, index) => {
         if (index >= currentPage * cardsPerPage && index < (currentPage + 1) * cardsPerPage) {
             card.style.display = 'block';
         } else {
@@ -58,35 +57,32 @@ function showCards() {
     });
 }
 
-function scrollToProductTop() {
-    productElement.scrollIntoView({
+function scrollToSneakerTop() {
+    sneakerElement.scrollIntoView({
         behavior: 'smooth' 
         // 平滑滾動效果
     });
 }
-
 function handlePrevClick() {
     if (currentPage > 0) {
         currentPage--;
         showCards();
     }
-    scrollToProductTop();
+    scrollToSneakerTop();
 }
-
 function handleNextClick() {
-    const totalPages = Math.ceil(productCards.length / cardsPerPage);
+    const totalPages = Math.ceil(sneakerCards.length / cardsPerPage);
     if (currentPage < totalPages - 1) {
         currentPage++;
         showCards();
     }
-    scrollToProductTop();
+    scrollToSneakerTop();
 }
 
 // 跳到第1頁
 if (prevBtn) {
     prevBtn.addEventListener('click', handlePrevClick);
 }
-
 // 跳到第2頁
 if (nextBtn) {
     nextBtn.addEventListener('click', handleNextClick);
