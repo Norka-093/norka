@@ -215,7 +215,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
     align-items: center;
-    gap: 76px;
+    gap: 2rem;
     /* margin-top: 80px;  */
     /* 讓 about 區塊從 home 區塊下方 80px 開始 */
 }
@@ -309,7 +309,6 @@ body {
     color: var(--font-color-1);
     text-decoration: line-through;
 }
-/* DOING: */
 .sneaker-btn {
     text-align: center;
     display: flex;
@@ -356,7 +355,6 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    /* height: 500px; */
 }
 .enthusiast-card:is(:hover, :focus) {
     background: var(--second-color);
@@ -398,7 +396,6 @@ body {
     column-gap: 2rem;
 }
 .information-box {
-    /* border: 1px solid var(--border-color); */
     text-align: center;
     padding: 0.6rem 0;
 }
@@ -414,7 +411,7 @@ body {
 }
 .information-social-icon {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .information-social-icon i {
@@ -501,6 +498,11 @@ body {
     }
     .enthusiast-title h2 {
         font-size: 2rem;
+    }
+}
+@media (min-width: 627px) and (max-width: 876px) {
+    .about-text p {
+        font-size: 1rem;
     }
 }
 @media (max-width: 852px) {
@@ -599,6 +601,11 @@ body {
         width: 100%;
     }
 }
+/* @media (min-width: 375px) and (max-width: 426px) {
+    .information-social-icon {
+        justify-content: space-evenly;
+    }
+} */
 @media (max-width: 360px) {
     .header {
         padding: 11px 4%;
