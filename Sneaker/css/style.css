@@ -75,7 +75,7 @@ body {
 /* ************** */
 /* ************** */
 /* # navbar */
-header{
+.header {
     position: fixed; /* 固定於頁面最上方 */
     z-index: 100;    /* 在所有元素最上方 */
     width: 100%;
@@ -86,7 +86,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 18px 100px;
-    background-color: var(--header-color-1);
+    background: var(--header-color-1);
     transition: var(--transition-1);
 }
 .header-logo {
@@ -106,6 +106,7 @@ header{
     background: var(--main-color);
     border-radius: 0.2rem;
     transition: var(--transition-2);
+    color: var(--bg-color);
 }
 .header-icon {
     color: var(--font-color-1);
@@ -328,6 +329,7 @@ header{
     text-align: center;
     display: flex;
     flex-direction: row;
+    /* height: 500px; */
 }
 .customer-card:is(:hover, :focus) {
     background: var(--second-color);
@@ -349,7 +351,7 @@ header{
     align-items: center;
 }
 .customer-card-right {
-    flex: 2;
+    flex: 1.5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -366,14 +368,12 @@ header{
 .information {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, auto));
-    /* grid-template-columns: 2fr 1fr 1fr 2fr;  */
     column-gap: 2rem;
-    /* margin-top: 2rem; */
 }
 .information-box {
     /* border: 1px solid #404040; */
     text-align: center;
-    padding: 0 1.2rem;
+    padding: 0.6rem 0;
 }
 .information-box-title {
     font-size: 1.2rem;
@@ -382,12 +382,12 @@ header{
 }
 .information-box-content p {
     font-size: 1rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: justify;
 }
 .information-social-icon {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .information-social-icon i {
@@ -403,6 +403,9 @@ header{
 }
 .information-box-content li {
  padding-bottom: 15px;   
+}
+.information-box-content li:last-child {
+    padding-bottom: 0;
 }
 .information-box-content li a{
     color: var(--font-color-2);
@@ -432,4 +435,108 @@ header{
 }
 /* ************** */
 /* ************** */
-/* 38:39 */
+/* # media */
+@media (max-width: 1058px) {
+    .header {
+        padding: 16px 60px;
+    }
+    section {
+        padding: 50px 60px;
+    }
+    .home-text h1 {
+        font-size: 2.4rem;
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        padding: 16px 4%;
+    }
+    section {
+        padding: 50px 4%;
+    }
+    .home-text h1 {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 852px) {
+    /* # 頁面寬度 <= 852px 時顯示 information-box 底線 */
+    .information-box {
+        border-bottom: 1px solid var(--font-color-2);
+    }
+}
+@media (min-width: 768px) {
+    /* # 頁面寬度 > 768px 時隱藏 menu-icon*/
+    #menu-icon {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 4%;
+    }
+    #menu-icon {
+        display: initial;
+    }
+    .menu-link {
+        /* # 調整 menu-link 顯示位置 */
+        position: absolute;
+        top: -200px;    /* 隱藏 menu-link 範圍 */
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: var(--second-color);
+        row-gap: 1.4rem;
+        padding: 20px;
+        transition: 0.3s;
+        text-align: center;
+    }
+    .menu-link a {
+        color: var(--font-color-2);
+    }
+    .menu-link a:is(:hover, :focus) {
+        color: var(--bg-color);
+    }
+    .menu-link.active {
+        top: 100%;  /* 顯示 menu-link 範圍 */
+    }
+}
+@media (max-width: 360px) {
+    .header {
+        padding: 11px 4%;
+    }
+    .header-logo {
+        width: 60px;
+    }
+    .home-text {
+        padding-top: 15px;
+    }
+    .home-text h1 {
+        font-size: 1.4rem;
+        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+    }
+    .home-text p {
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    .about-img {
+        /* about-img 與 about-text 位置互換 */
+        order: 2;
+    }
+    .about-text h2 {
+        font-size: 1.4rem;
+        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+    }
+    .about-text p {
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+    .product-title h2 {
+        font-size: 1.4rem;
+        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+    }
+    .customer-title h2 {
+        font-size: 1.4rem;
+        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+    }
+}
