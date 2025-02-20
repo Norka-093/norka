@@ -46,6 +46,7 @@
     /* transition */
     --transition-1: 0.5s linear;
     --transition-2: 0.2s all linear;
+    --transition-3: 0.3s ease;
 
 }
 section {
@@ -273,6 +274,11 @@ body {
     border-radius: 10px;
     box-shadow: var(--box-shadow);
 }
+.sneaker-img {
+    overflow: hidden;   /* 確保圖片放大時不會超出容器範圍 */
+    border-radius: 8px;
+    background: var(--card-img-bg-1);
+}
 .sneaker-card img {
     width: 100%;
     height: 300px;
@@ -281,12 +287,13 @@ body {
     padding: 20px;
     background: var(--card-img-bg-1);
     border-radius: 8px;
+    transition: var(--transition-3);
 }
-/* ! 功能未完成 */
-/* .sneaker-card img:is(:hover, :focus) {
-    transform: scale(1.5);
-    overflow: hidden;
-} */
+.sneaker-card img:is(:hover, :focus){
+    /* img 放大效果 */
+    transform: scale(1.1);
+    padding: 0;
+}
 .sneaker-card h3 {
     font-size: 1.1rem;
     font-weight: 700;
