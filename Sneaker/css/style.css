@@ -12,29 +12,24 @@
 }
 :root {
     /** variables **/
-
-    /* # new color */
+    /* color */
     --main-bg-color: #e2d9c8;
-
     --color-1: #30261c;
     --color-2: #f1f0ee;
     --color-3: #dd861c;
     --color-4: #754f19;
-    --color-7: #1b1b1b;
-    --color-9: #fff;
-    --color-10: #f1f1f1;
-    --color-11: #e0e0e0;
-    --color-12: #c79e6b;
-
+    --color-5: #1b1b1b;
+    --color-6: #fff;
+    --color-7: #f1f1f1;
+    --color-8: #e0e0e0;
+    --color-9: #c79e6b;
     --shadow-color-1: 2px 2px 10px 4px rgba(14, 55, 54, 0.15);
     --shadow-color-2: 3px 3px 0 #754f19;
     --shadow-color-3: 2px 2px 0 #754f19;
     --shadow-color-4: 1px 1px 0 #1b1b1b;
-
     --star-color: #ffc241;
     --money-color-1: #ff5353;
     --money-color-2: #9c9c9c;
-
     /* transition */
     --transition-1: 0.5s linear;
     --transition-2: 0.2s all linear;
@@ -63,7 +58,7 @@ body {
 }
 .btn:is(:hover, :focus) {
     /* DOING: */
-    /* background: var(--color-10); */
+    /* background: var(--color-7); */
     /* background: #000; */
 }
 /** Block-End **/
@@ -220,7 +215,7 @@ body {
 }
 .about-text p {
     font-size: 1.2rem;
-    color: var(--color-7);
+    color: var(--color-5);
     margin: 1rem 0;
     text-align: justify;
 }
@@ -254,9 +249,9 @@ body {
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    background: var(--color-11);
+    background: var(--color-8);
     box-shadow: var(--shadow-color-1);
-    border: 2px solid var(--color-7);
+    border: 2px solid var(--color-5);
 }
 .sneaker-img {
     overflow: hidden;   /* 確保圖片放大時不會超出容器範圍 */
@@ -269,10 +264,10 @@ body {
     object-fit: contain;
     object-position: center;
     padding: 20px;
-    background: var(--color-9);
+    background: var(--color-6);
     border-radius: 8px;
     transition: var(--transition-3);
-    border: 2px solid var(--color-7);
+    border: 2px solid var(--color-5);
 }
 .sneaker-card img:is(:hover, :focus){
     /* img 放大效果 */
@@ -288,16 +283,16 @@ body {
     padding: 5px;
     font-size: 1.2rem;
     border-radius: 5px;
-    color: var(--color-7);
-    border: 2px solid var(--color-7);
+    color: var(--color-5);
+    border: 2px solid var(--color-5);
 }
 .sneaker-card-link:is(:hover, :focus) {
     /* * 分享按鈕效果 * */
     background: var(--color-3);
-    color: var(--color-9);
+    color: var(--color-6);
 }
 .sneaker-card h3 {
-    color: var(--color-7);
+    color: var(--color-5);
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -334,9 +329,9 @@ body {
     width: 30px;
     height: 30px;
     margin: 0 10px;
-    color: var(--color-7);
+    color: var(--color-5);
     background: var(--color-2);
-    border: 1.5px solid var(--color-7);
+    border: 1.5px solid var(--color-5);
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: 5px;
@@ -344,7 +339,7 @@ body {
 }
 .sneaker-btn button:is(:hover, :focus) {
     /** 翻頁按鈕效果 **/
-    background: var(--color-11);
+    background: var(--color-8);
 }
 /** Block-End **/
 /* # enthusiast */
@@ -364,10 +359,10 @@ body {
 }
 .enthusiast-card {
     padding: 20px;
-    color: var(--color-7);
+    color: var(--color-5);
     box-shadow: var(--shadow-color-1);
     background: var(--color-2);
-    border: 2px solid var(--color-7);
+    border: 2px solid var(--color-5);
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -375,7 +370,7 @@ body {
     gap: 10px;
 }
 .enthusiast-card:is(:hover, :focus) {
-    background: var(--color-11);
+    background: var(--color-8);
     transition: var(--transition-2);
 }
 .enthusiast-card img {
@@ -383,9 +378,9 @@ body {
     height: 150px;
     object-fit: contain;
     object-position: center;
-    background: var(--color-10);
+    background: var(--color-7);
     border-radius: 8px;
-    border: 2px solid var(--color-7);
+    border: 2px solid var(--color-5);
 }
 .enthusiast-card-left {
     flex: 1;
@@ -425,7 +420,7 @@ body {
     margin-bottom: 10px;
 }
 .information-box-content p {
-    color: var(--color-7);
+    color: var(--color-5);
     font-size: 1rem;
     margin-bottom: 10px;
     text-align: justify;
@@ -437,18 +432,18 @@ body {
 }
 .information-social-icon i {
     font-size: 24px;
-    color: var(--color-7);
+    color: var(--color-5);
     background: var(--color-2);
-    border: 1.5px solid var(--color-7);
+    border: 1.5px solid var(--color-5);
     padding: 10px;
     border-radius: 0.2rem;
 }
 .information-social-icon i:is(:hover, :focus) {
-    color: var(--color-9);
-    background: var(--color-12);
+    color: var(--color-6);
+    background: var(--color-9);
 }
 .information-box-content {
-    color: var(--color-7);
+    color: var(--color-5);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -461,10 +456,10 @@ body {
     padding-bottom: 0;
 }
 .information-box-content li a{
-    color: var(--color-7);
+    color: var(--color-5);
 }
 .information-box-content li a:is(:hover, :focus) {
-    color: var(--color-9);
+    color: var(--color-6);
     text-shadow: var(--shadow-color-4);
 }
 /** Block-End **/
@@ -509,9 +504,9 @@ body {
     margin-bottom: 15px;
 }
 .step-and-img span {
-    color: var(--color-7);
+    color: var(--color-5);
     padding-right: 40px;
-    font-size: 0.9rem;
+    font-size: 14px;
     font-weight: 700;
 }
 .step-and-img img {
@@ -519,7 +514,7 @@ body {
     height: 80px;
     background: var(--color-2);
     border-radius: 5px;
-    border: 1.5px solid var(--color-7);
+    border: 1.5px solid var(--color-5);
 }
 .process-content h2 {
     font-size: 18px;
@@ -533,7 +528,7 @@ body {
     line-height: 1.4;
     text-align: justify;
     font-weight: 600;
-    color: var(--color-7);
+    color: var(--color-5);
 }
 /* # .column-scrollbar */
 .column-scrollbar {
@@ -620,7 +615,7 @@ body {
 @media (max-width: 852px) {
     /* # 頁面寬度 <= 852px 時顯示 information-box 底線 */
     .information-box {
-        border-bottom: 1.5px solid var(--color-7);
+        border-bottom: 1.5px solid var(--color-5);
     }
 }
 @media (min-width: 768px) {
@@ -655,10 +650,10 @@ body {
         text-align: center;
     }
     .menu-link a {
-        color: var(--color-7);
+        color: var(--color-5);
     }
     .menu-link a:is(:hover, :focus) {
-        color: var(--color-9);
+        color: var(--color-6);
     }
     .menu-link.active {
         top: 100%;  /* 顯示 menu-link 範圍 */
