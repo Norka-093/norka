@@ -1,8 +1,6 @@
 /* # New Project / Start at 2025/02/18 */
-/* ************** */
-/* ************** */
-/* # reset */
 *{
+    /** reset **/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,33 +10,30 @@
     list-style: none;
     text-decoration: none;
 }
-/* ************** */
-/* ************** */
-/* # 全域 */
 :root {
+    /** variables **/
+
     /* # new color */
+    --main-bg-color: #e2d9c8;
+
     --color-1: #30261c;
     --color-2: #f1f0ee;
-    --color-3: #e2d9c8;
-    --color-4: #bc9667;
-    --color-5: rgb(117, 79, 25);
-    --color-6: #000;
+    --color-3: #dd861c;
+    --color-4: #754f19;
     --color-7: #1b1b1b;
-    --color-8: #edeae3;
     --color-9: #fff;
     --color-10: #f1f1f1;
-    --color-11: 2px 2px 10px 4px rgb(14 55 54 / 15%);
+    --color-11: #e0e0e0;
+    --color-12: #c79e6b;
+
+    --shadow-color-1: 2px 2px 10px 4px rgba(14, 55, 54, 0.15);
+    --shadow-color-2: 3px 3px 0 #754f19;
+    --shadow-color-3: 2px 2px 0 #754f19;
+    --shadow-color-4: 1px 1px 0 #1b1b1b;
 
     --star-color: #ffc241;
-    --money-color-1: rgb(255, 83, 83);
-    --money-color-2: #c5c5c5;
-
-    --btn-color-1: #c79e6b;
-    --btn-color-2: #8a6f4d;
-    --btn-color-3: #404040;
-
-    --scrollbar-color-1: hsl(0, 0%, 100%);
-    --scrollbar-color-2: hsl(5, 100%, 69%);
+    --money-color-1: #ff5353;
+    --money-color-2: #9c9c9c;
 
     /* transition */
     --transition-1: 0.5s linear;
@@ -56,21 +51,22 @@ img {
     align-items: center;
 }
 body {
-    color: var(--color-2);
+    background: var(--main-bg-color);
 }
 .btn {
     padding: 10px 40px;
     border-radius: 5px;
     color: var(--color-2);
-    background: var(--color-1);
-    border: 1px solid var(--btn-color-3);
+    background: var(--color-3);
+    border: 2px solid var(--color-4);
     font-weight: 500;
 }
 .btn:is(:hover, :focus) {
-    background: var(--btn-color-1);
+    /* DOING: */
+    /* background: var(--color-10); */
+    /* background: #000; */
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # navbar */
 .header {
     position: fixed; /* 固定於頁面最上方 */
@@ -100,10 +96,10 @@ body {
     font-weight: 500;
 }
 .menu-link a:is(:hover, :focus) {
-    background: var(--color-4);
+    background: var(--color-3);
     border-radius: 0.2rem;
     transition: var(--transition-2);
-    color: var(--color-9);
+    color: var(--color-2);
 }
 .header-icon {
     color: var(--color-2);
@@ -115,7 +111,7 @@ body {
 }
 .header-icon i:is(:hover, :focus) {
     cursor: pointer;
-    color: var(--color-4);
+    color: var(--color-3);
 }
 #menu-icon {
     color: var(--color-2);
@@ -127,20 +123,20 @@ body {
     padding: 8px 15px;
 }
 #menu-icon:is(:hover, :focus) {
-    color: var(--color-4);
+    color: var(--color-3);
 }
 .search-box {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%);
-    background: var(--color-9);
+    background: var(--color-2);
     width: 100%;
     display: none;
 }
 .search-box.active {
     top: 100%;
-    box-shadow: var(--color-11);
+    box-shadow: var(--shadow-color-1);
     transition: var(--transition-2);
     display: block;
 }
@@ -150,14 +146,13 @@ body {
     border: none;
     outline: none;
     font-size: 1rem;
-    color: var(--color-4);
+    color: var(--color-3);
 }
 .search-box input::placeholder {
     font-size: 1rem;
     font-weight: 500;
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # home */
 .home {
     width: 100%;
@@ -175,8 +170,8 @@ body {
 .home-text h1 {
     font-size: 3.4rem;
     font-weight: bold;
-    color: var(--color-4);
-    text-shadow:  3px 3px 0 var(--color-5);
+    color: var(--color-3);
+    text-shadow: var(--shadow-color-2);
     /* text-shadow: 水平偏移 | 垂直偏移 | 模糊程度 | 顏色 */
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -186,7 +181,7 @@ body {
     font-size: 1.4rem;
     font-weight: bold;
     color: var(--color-2);
-    text-shadow: 1px 1px 0 var(--color-6);
+    text-shadow: var(--shadow-color-4);
     margin: 1rem 0;
     text-align: justify;
 }
@@ -200,8 +195,7 @@ body {
 .home-img img {
     border-radius: 10px;
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # about */
 .about {
     display: grid;
@@ -218,8 +212,8 @@ body {
 }
 .about-text h2 {
     font-size: 3.4rem;
-    color: var(--color-4);
-    text-shadow:  3px 3px 0 var(--color-5);
+    color: var(--color-3);
+    text-shadow: var(--shadow-color-2);
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
@@ -233,16 +227,15 @@ body {
 .about-btn {
     margin-right: auto;
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # sneaker */
 .sneaker-title {
     text-align: center;
 }
 .sneaker-title h2 {
     font-size: 3.4rem;
-    color: var(--color-4);
-    text-shadow:  3px 3px 0 var(--color-5);
+    color: var(--color-3);
+    text-shadow: var(--shadow-color-2);
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
@@ -254,28 +247,32 @@ body {
     margin: 2rem 0;
 }
 .sneaker-card {
+    /* * card 外框 * */
     position: relative;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: var(--color-11);
+    background: var(--color-11);
+    box-shadow: var(--shadow-color-1);
+    border: 2px solid var(--color-7);
 }
 .sneaker-img {
     overflow: hidden;   /* 確保圖片放大時不會超出容器範圍 */
     border-radius: 8px;
-    /* background: var(--color-3); */
 }
 .sneaker-card img {
+    /* * card 內框 * */
     width: 100%;
     height: 300px;
     object-fit: contain;
     object-position: center;
     padding: 20px;
-    background: var(--color-10);
+    background: var(--color-9);
     border-radius: 8px;
     transition: var(--transition-3);
+    border: 2px solid var(--color-7);
 }
 .sneaker-card img:is(:hover, :focus){
     /* img 放大效果 */
@@ -283,18 +280,20 @@ body {
     padding: 0;
 }
 .sneaker-card-link {
+    /* * 分享按鈕 * */
     display: flex;
     position: absolute;
     top: 20px;
     right: 20px;
     padding: 5px;
     font-size: 1.2rem;
-    background: var(--color-9);
     border-radius: 5px;
     color: var(--color-7);
+    border: 2px solid var(--color-7);
 }
 .sneaker-card-link:is(:hover, :focus) {
-    background: var(--main-color);
+    /* * 分享按鈕效果 * */
+    background: var(--color-3);
     color: var(--color-9);
 }
 .sneaker-card h3 {
@@ -311,14 +310,18 @@ body {
     justify-content:space-evenly;
 }
 .sneaker-content span {
+    /** 價格-1 **/
     color: var(--money-color-1);
+    font-weight: 600;
 }
 .sneaker-card-btn {
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
 }
 .sneaker-content del {
+    /** 價格-2 **/
     color: var(--money-color-2);
     text-decoration: line-through;
+    font-weight: 700;
 }
 .sneaker-btn {
     text-align: center;
@@ -327,22 +330,23 @@ body {
     align-items: center;
 }
 .sneaker-btn button {
+    /** 翻頁按鈕 **/
     width: 30px;
     height: 30px;
     margin: 0 10px;
-    border: 1px solid var(--border-color);
     color: var(--color-7);
-    background: var(--color-8);
+    background: var(--color-2);
+    border: 1.5px solid var(--color-7);
     font-size: 0.8rem;
+    font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
 }
 .sneaker-btn button:is(:hover, :focus) {
-    color: var(--color-9);
-    background: var(--main-color);
+    /** 翻頁按鈕效果 **/
+    background: var(--color-11);
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # enthusiast */
 .enthusiast-container {
     display: grid;
@@ -352,8 +356,8 @@ body {
 }
 .enthusiast-title h2{
     font-size: 3.4rem;
-    color: var(--color-4);
-    text-shadow:  3px 3px 0 var(--color-5);
+    color: var(--color-3);
+    text-shadow: var(--shadow-color-2);
     text-transform: uppercase;
     letter-spacing: 1px;
     text-align: center;
@@ -361,7 +365,9 @@ body {
 .enthusiast-card {
     padding: 20px;
     color: var(--color-7);
-    box-shadow: var(--color-11);
+    box-shadow: var(--shadow-color-1);
+    background: var(--color-2);
+    border: 2px solid var(--color-7);
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -369,7 +375,7 @@ body {
     gap: 10px;
 }
 .enthusiast-card:is(:hover, :focus) {
-    background: var(--color-8);
+    background: var(--color-11);
     transition: var(--transition-2);
 }
 .enthusiast-card img {
@@ -379,6 +385,7 @@ body {
     object-position: center;
     background: var(--color-10);
     border-radius: 8px;
+    border: 2px solid var(--color-7);
 }
 .enthusiast-card-left {
     flex: 1;
@@ -399,8 +406,7 @@ body {
 .enthusiast-icon {
     color: var(--star-color);
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # information */
 .information {
     display: grid;
@@ -412,7 +418,8 @@ body {
     padding: 0.6rem 0;
 }
 .information-box-title {
-    color: var(--color-5);
+    color: var(--color-3);
+    text-shadow: var(--shadow-color-4);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 10px;
@@ -431,13 +438,14 @@ body {
 .information-social-icon i {
     font-size: 24px;
     color: var(--color-7);
-    background: var(--color-8);
+    background: var(--color-2);
+    border: 1.5px solid var(--color-7);
     padding: 10px;
     border-radius: 0.2rem;
 }
 .information-social-icon i:is(:hover, :focus) {
-    color: var(--color-8);
-    background: var(--color-4);
+    color: var(--color-9);
+    background: var(--color-12);
 }
 .information-box-content {
     color: var(--color-7);
@@ -456,10 +464,10 @@ body {
     color: var(--color-7);
 }
 .information-box-content li a:is(:hover, :focus) {
-    color: var(--color-4);
+    color: var(--color-9);
+    text-shadow: var(--shadow-color-4);
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # footer */
 .footer {
     padding: 20px;
@@ -467,15 +475,14 @@ body {
     color: var(--color-2);
     background: var(--color-1);
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # process */
 .process-title h1{
     font-size: 3.4rem;
-    color: var(--color-4);
+    color: var(--color-3);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 3px 3px 0 var(--color-5);
+    text-shadow: var(--shadow-color-2);
     text-align: center;
 }
 .process-container {
@@ -493,7 +500,6 @@ body {
     flex-direction: column; /* step-img-wrapper 和 process-content 垂直排列 */
     align-items: center;
     flex: 0 0 auto;
-    color: var(--color-7);
 }
 .step-and-img {
     display: flex;
@@ -503,26 +509,31 @@ body {
     margin-bottom: 15px;
 }
 .step-and-img span {
-    color: var(--color-5);
+    color: var(--color-7);
     padding-right: 40px;
-    font-size: 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 .step-and-img img {
     width: 80px;
     height: 80px;
     background: var(--color-2);
     border-radius: 5px;
+    border: 1.5px solid var(--color-7);
 }
 .process-content h2 {
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
     margin-bottom: 10px;
     text-align: left;
+    color: var(--color-4);
 }
 .process-content p {
-    font-size: 12px;
+    font-size: 0.9rem;
     line-height: 1.4;
     text-align: justify;
+    font-weight: 600;
+    color: var(--color-7);
 }
 /* # .column-scrollbar */
 .column-scrollbar {
@@ -541,20 +552,19 @@ body {
     height: 15px;
 }
 .column-scrollbar::-webkit-scrollbar-track {
-    background: var(--scrollbar-color-1);
+    background: var(--color-2);
     border-radius: 20px;
-    outline: 2px solid var(--scrollbar-color-2);
+    outline: 2px solid var(--color-3);
 }
 .column-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-color-2);
+    background: var(--color-3);
     border-radius: 20px;
-    border: 2px solid var(--scrollbar-color-1);
+    border: 2px solid var(--color-2);
 }
 .column-scrollbar::-webkit-column-scrollbar-button {
     width: calc(25% - 40px);
 }
-/* ************** */
-/* ************** */
+/** Block-End **/
 /* # media */
 @media (max-width: 1058px) {
     .header {
@@ -610,7 +620,7 @@ body {
 @media (max-width: 852px) {
     /* # 頁面寬度 <= 852px 時顯示 information-box 底線 */
     .information-box {
-        border-bottom: 1px solid var(--color-7);
+        border-bottom: 1.5px solid var(--color-7);
     }
 }
 @media (min-width: 768px) {
@@ -637,7 +647,8 @@ body {
         right: 0;
         display: flex;
         flex-direction: column;
-        background: var(--color-8);
+        background: var(--color-2);
+        box-shadow: var(--shadow-color-1);
         row-gap: 1.4rem;
         padding: 20px;
         transition: 0.3s;
@@ -705,7 +716,7 @@ body {
     }
     .home-text h1 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 var(--color-5);
+        text-shadow: var(--shadow-color-3);
     }
     .home-text p {
         font-size: 0.8rem;
@@ -713,11 +724,11 @@ body {
     }
     .process-title h1 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 var(--color-5);
+        text-shadow: var(--shadow-color-3);
     }
     .about-text h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 var(--color-5);
+        text-shadow: var(--shadow-color-3);
     }
     .about-text p {
         font-size: 0.8rem;
@@ -725,10 +736,10 @@ body {
     }
     .sneaker-title h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 var(--color-5);
+        text-shadow: var(--shadow-color-3);
     }
     .enthusiast-title h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 var(--color-5);
+        text-shadow: var(--shadow-color-3);
     }
 }
