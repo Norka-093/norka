@@ -52,14 +52,22 @@ body {
     padding: 10px 40px;
     border-radius: 5px;
     color: var(--color-2);
-    background: var(--color-3);
-    border: 2px solid var(--color-4);
+    /* background: var(--color-3); */
+    background: #588157;
+    border: 2px solid #344e41;
+
+    
+    /* border: 2px solid var(--color-4); */
     font-weight: 500;
 }
 .btn:is(:hover, :focus) {
     /* DOING: */
     /* background: var(--color-7); */
-    /* background: #000; */
+    
+    background: #a3b18a;
+    
+    border-color: #3a5a40;
+    color: var(--color-5);
 }
 /** Block-End **/
 /* # navbar */
