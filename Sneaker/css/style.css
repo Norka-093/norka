@@ -481,6 +481,60 @@ body {
 }
 /* ************** */
 /* ************** */
+/* DOING: process */
+.process-title h1{
+    font-size: 3.4rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 3px 3px 0 rgb(117, 79, 25);
+    text-align: center;
+}
+.process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.process-card {
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* 让 step-img-wrapper 和 process-content 垂直排列 */
+    align-items: center;
+}
+/* step 和 img 的包裹容器样式 */
+.step-and-img {
+    display: flex;
+    flex-direction: row; /* 让 step 和 img 水平排列 */
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.step-and-img span {
+    padding-right: 40px;
+    font-size: 14px;
+}
+.step-and-img img {
+    width: 80px;
+    height: 80px;
+    background: var(--font-color-1);
+    border-radius: 5px;
+}
+.process-content h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.process-content p {
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: justify;
+}
+/* ************** */
+/* ************** */
 /* # media */
 @media (max-width: 1058px) {
     .header {
