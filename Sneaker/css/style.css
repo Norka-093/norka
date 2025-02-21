@@ -16,42 +16,34 @@
 /* ************** */
 /* # 全域 */
 :root {
-    /* color */
-    --main-color: #bc9667;
-    --second-color: #edeae3;
-    --bg-color: #fff;
-    
-    /* btn */
-    --btn-color-1: #8a6f4d;
-    --border-color: #404040;
-    /* header */
-    --header-color-1: #1b1b1b;
-    /* font */
-    --font-color-1: #c5c5c5;
-    --font-color-2: #1c1c1c;
-    --font-color-3: rgb(255, 83, 83);
-    /* icon */
-    --icon-color-1: #ffc241;
-    
-    /* card bg */
-    /* card img bg*/
-    --card-img-bg-1: #f1f1f1;
+    /* # new color */
+    --color-1: #30261c;
+    --color-2: #f1f0ee;
+    --color-3: #e2d9c8;
+    --color-4: #bc9667;
+    --color-5: rgb(117, 79, 25);
+    --color-6: #000;
+    --color-7: #1b1b1b;
+    --color-8: #edeae3;
+    --color-9: #fff;
+    --color-10: #f1f1f1;
+    --color-11: 2px 2px 10px 4px rgb(14 55 54 / 15%);
 
-    /* shadow */
-    --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
+    --star-color: #ffc241;
+    --money-color-1: rgb(255, 83, 83);
+    --money-color-2: #c5c5c5;
 
-    /* scrollbar */
+    --btn-color-1: #c79e6b;
+    --btn-color-2: #8a6f4d;
+    --btn-color-3: #404040;
+
     --scrollbar-color-1: hsl(0, 0%, 100%);
     --scrollbar-color-2: hsl(5, 100%, 69%);
-
-    /* testing color */
-    --test-bg-color: red;
 
     /* transition */
     --transition-1: 0.5s linear;
     --transition-2: 0.2s all linear;
     --transition-3: 0.3s ease;
-
 }
 section {
     padding: 50px 100px;
@@ -64,16 +56,15 @@ img {
     align-items: center;
 }
 body {
-    color: var(--header-color-1);
+    color: var(--color-2);
 }
 .btn {
     padding: 10px 40px;
     border-radius: 5px;
-    border: 1px solid var(--border-color);
-    background: var(--main-color);
-    color: var(--bg-color);
+    color: var(--color-2);
+    background: var(--color-1);
+    border: 1px solid var(--btn-color-3);
     font-weight: 500;
-    text-shadow: 1px 1px 0 black;
 }
 .btn:is(:hover, :focus) {
     background: var(--btn-color-1);
@@ -92,7 +83,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 18px 100px;
-    background: var(--header-color-1);
+    background: var(--color-1);
     transition: var(--transition-1);
 }
 .header-logo {
@@ -103,19 +94,19 @@ body {
 }
 .menu-link a {
     padding: 8px 15px;
-    color: var(--font-color-1);
+    color: var(--color-2);
     font-size: 1rem;
     text-transform: uppercase;
     font-weight: 500;
 }
 .menu-link a:is(:hover, :focus) {
-    background: var(--main-color);
+    background: var(--color-4);
     border-radius: 0.2rem;
     transition: var(--transition-2);
-    color: var(--bg-color);
+    color: var(--color-9);
 }
 .header-icon {
-    color: var(--font-color-1);
+    color: var(--color-2);
     font-size: 1.3rem;
     line-height: 1.1rem;
     display: flex;
@@ -124,10 +115,10 @@ body {
 }
 .header-icon i:is(:hover, :focus) {
     cursor: pointer;
-    color: var(--main-color);
+    color: var(--color-4);
 }
 #menu-icon {
-    color: var(--font-color-1);
+    color: var(--color-2);
     font-size: 1.5rem;
     cursor: pointer;
     display: flex;
@@ -136,20 +127,20 @@ body {
     padding: 8px 15px;
 }
 #menu-icon:is(:hover, :focus) {
-    color: var(--main-color);
+    color: var(--color-4);
 }
 .search-box {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%);
-    background: var(--bg-color);
+    background: var(--color-9);
     width: 100%;
     display: none;
 }
 .search-box.active {
     top: 100%;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--color-11);
     transition: var(--transition-2);
     display: block;
 }
@@ -159,7 +150,7 @@ body {
     border: none;
     outline: none;
     font-size: 1rem;
-    color: var(--main-color);
+    color: var(--color-4);
 }
 .search-box input::placeholder {
     font-size: 1rem;
@@ -184,19 +175,19 @@ body {
 .home-text h1 {
     font-size: 3.4rem;
     font-weight: bold;
-    color: var(--main-color);
+    color: var(--color-4);
+    text-shadow:  3px 3px 0 var(--color-5);
+    /* text-shadow: 水平偏移 | 垂直偏移 | 模糊程度 | 顏色 */
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow:  3px 3px 0 rgb(117, 79, 25);
-    /* text-shadow: 水平偏移 | 垂直偏移 | 模糊程度 | 顏色 */
     text-align: center;
 }
 .home-text p {
     font-size: 1.4rem;
     font-weight: bold;
-    color: var(--bg-color);
+    color: var(--color-2);
+    text-shadow: 1px 1px 0 var(--color-6);
     margin: 1rem 0;
-    text-shadow: 1px 1px 0 black;
     text-align: justify;
 }
 .home-text {
@@ -227,15 +218,15 @@ body {
 }
 .about-text h2 {
     font-size: 3.4rem;
-    color: var(--main-color);
+    color: var(--color-4);
+    text-shadow:  3px 3px 0 var(--color-5);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow:  3px 3px 0 rgb(117, 79, 25);
     text-align: center;
 }
 .about-text p {
     font-size: 1.2rem;
-    color: var(--font-color-2);
+    color: var(--color-7);
     margin: 1rem 0;
     text-align: justify;
 }
@@ -250,10 +241,10 @@ body {
 }
 .sneaker-title h2 {
     font-size: 3.4rem;
-    color: var(--main-color);
+    color: var(--color-4);
+    text-shadow:  3px 3px 0 var(--color-5);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow:  3px 3px 0 rgb(117, 79, 25);
     text-align: center;
 }
 .sneaker-container {
@@ -269,12 +260,12 @@ body {
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--color-11);
 }
 .sneaker-img {
     overflow: hidden;   /* 確保圖片放大時不會超出容器範圍 */
     border-radius: 8px;
-    background: var(--card-img-bg-1);
+    /* background: var(--color-3); */
 }
 .sneaker-card img {
     width: 100%;
@@ -282,7 +273,7 @@ body {
     object-fit: contain;
     object-position: center;
     padding: 20px;
-    background: var(--card-img-bg-1);
+    background: var(--color-10);
     border-radius: 8px;
     transition: var(--transition-3);
 }
@@ -298,15 +289,16 @@ body {
     right: 20px;
     padding: 5px;
     font-size: 1.2rem;
-    background: var(--bg-color);
+    background: var(--color-9);
     border-radius: 5px;
-    color: var(--font-color-2);
+    color: var(--color-7);
 }
 .sneaker-card-link:is(:hover, :focus) {
     background: var(--main-color);
-    color: var(--bg-color);
+    color: var(--color-9);
 }
 .sneaker-card h3 {
+    color: var(--color-7);
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -319,13 +311,13 @@ body {
     justify-content:space-evenly;
 }
 .sneaker-content span {
-    color: var(--font-color-3);
+    color: var(--money-color-1);
 }
 .sneaker-card-btn {
     padding: 0.2rem 0.5rem;
 }
 .sneaker-content del {
-    color: var(--font-color-1);
+    color: var(--money-color-2);
     text-decoration: line-through;
 }
 .sneaker-btn {
@@ -339,14 +331,14 @@ body {
     height: 30px;
     margin: 0 10px;
     border: 1px solid var(--border-color);
-    color: var(--font-color-2);
-    background: var(--second-color);
+    color: var(--color-7);
+    background: var(--color-8);
     font-size: 0.8rem;
     border-radius: 5px;
     cursor: pointer;
 }
 .sneaker-btn button:is(:hover, :focus) {
-    color: var(--bg-color);
+    color: var(--color-9);
     background: var(--main-color);
 }
 /* ************** */
@@ -360,15 +352,16 @@ body {
 }
 .enthusiast-title h2{
     font-size: 3.4rem;
-    color: var(--main-color);
+    color: var(--color-4);
+    text-shadow:  3px 3px 0 var(--color-5);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow:  3px 3px 0 rgb(117, 79, 25);
     text-align: center;
 }
 .enthusiast-card {
     padding: 20px;
-    box-shadow: var(--box-shadow);
+    color: var(--color-7);
+    box-shadow: var(--color-11);
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -376,7 +369,7 @@ body {
     gap: 10px;
 }
 .enthusiast-card:is(:hover, :focus) {
-    background: var(--second-color);
+    background: var(--color-8);
     transition: var(--transition-2);
 }
 .enthusiast-card img {
@@ -384,7 +377,7 @@ body {
     height: 150px;
     object-fit: contain;
     object-position: center;
-    background: var(--card-img-bg-1);
+    background: var(--color-10);
     border-radius: 8px;
 }
 .enthusiast-card-left {
@@ -404,7 +397,7 @@ body {
     gap: 10px;
 }
 .enthusiast-icon {
-    color: var(--icon-color-1);
+    color: var(--star-color);
 }
 /* ************** */
 /* ************** */
@@ -419,11 +412,13 @@ body {
     padding: 0.6rem 0;
 }
 .information-box-title {
+    color: var(--color-5);
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 10px;
 }
 .information-box-content p {
+    color: var(--color-7);
     font-size: 1rem;
     margin-bottom: 10px;
     text-align: justify;
@@ -435,16 +430,17 @@ body {
 }
 .information-social-icon i {
     font-size: 24px;
-    color: var(--font-color-2);
-    background: var(--second-color);
+    color: var(--color-7);
+    background: var(--color-8);
     padding: 10px;
     border-radius: 0.2rem;
 }
 .information-social-icon i:is(:hover, :focus) {
-    color: var(--second-color);
-    background: var(--main-color);
+    color: var(--color-8);
+    background: var(--color-4);
 }
 .information-box-content {
+    color: var(--color-7);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -457,10 +453,10 @@ body {
     padding-bottom: 0;
 }
 .information-box-content li a{
-    color: var(--font-color-2);
+    color: var(--color-7);
 }
 .information-box-content li a:is(:hover, :focus) {
-    color: var(--main-color);
+    color: var(--color-4);
 }
 /* ************** */
 /* ************** */
@@ -468,18 +464,18 @@ body {
 .footer {
     padding: 20px;
     text-align: center;
-    color: var(--font-color-2);
-    background: var(--second-color);
+    color: var(--color-2);
+    background: var(--color-1);
 }
 /* ************** */
 /* ************** */
 /* # process */
 .process-title h1{
     font-size: 3.4rem;
-    color: var(--main-color);
+    color: var(--color-4);
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 3px 3px 0 rgb(117, 79, 25);
+    text-shadow: 3px 3px 0 var(--color-5);
     text-align: center;
 }
 .process-container {
@@ -497,6 +493,7 @@ body {
     flex-direction: column; /* step-img-wrapper 和 process-content 垂直排列 */
     align-items: center;
     flex: 0 0 auto;
+    color: var(--color-7);
 }
 .step-and-img {
     display: flex;
@@ -506,13 +503,14 @@ body {
     margin-bottom: 15px;
 }
 .step-and-img span {
+    color: var(--color-5);
     padding-right: 40px;
     font-size: 14px;
 }
 .step-and-img img {
     width: 80px;
     height: 80px;
-    background: var(--font-color-1);
+    background: var(--color-2);
     border-radius: 5px;
 }
 .process-content h2 {
@@ -612,7 +610,7 @@ body {
 @media (max-width: 852px) {
     /* # 頁面寬度 <= 852px 時顯示 information-box 底線 */
     .information-box {
-        border-bottom: 1px solid var(--font-color-2);
+        border-bottom: 1px solid var(--color-7);
     }
 }
 @media (min-width: 768px) {
@@ -639,17 +637,17 @@ body {
         right: 0;
         display: flex;
         flex-direction: column;
-        background: var(--second-color);
+        background: var(--color-8);
         row-gap: 1.4rem;
         padding: 20px;
         transition: 0.3s;
         text-align: center;
     }
     .menu-link a {
-        color: var(--font-color-2);
+        color: var(--color-7);
     }
     .menu-link a:is(:hover, :focus) {
-        color: var(--bg-color);
+        color: var(--color-9);
     }
     .menu-link.active {
         top: 100%;  /* 顯示 menu-link 範圍 */
@@ -707,7 +705,7 @@ body {
     }
     .home-text h1 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+        text-shadow:  2px 2px 0 var(--color-5);
     }
     .home-text p {
         font-size: 0.8rem;
@@ -715,11 +713,11 @@ body {
     }
     .process-title h1 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+        text-shadow:  2px 2px 0 var(--color-5);
     }
     .about-text h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+        text-shadow:  2px 2px 0 var(--color-5);
     }
     .about-text p {
         font-size: 0.8rem;
@@ -727,10 +725,10 @@ body {
     }
     .sneaker-title h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+        text-shadow:  2px 2px 0 var(--color-5);
     }
     .enthusiast-title h2 {
         font-size: 1.4rem;
-        text-shadow:  2px 2px 0 rgb(117, 79, 25);
+        text-shadow:  2px 2px 0 var(--color-5);
     }
 }
