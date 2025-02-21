@@ -1,28 +1,30 @@
 // New Project / Start at 2025/02/18
 
+
 // # 顯示與隱藏 .search-box
 const search =document.querySelector('.search-box');
-
 document.querySelector('#search-icon').onclick = () => {
     search.classList.toggle('active');
     menu.classList.remove('active');
     // .search-box & .menu-link 同一時間只會顯示其中 1 個
 }
+// *-- end --* //
+
 
 // # @media (max-width: 768px) > 顯示與隱藏 .menu-link
 const menu =document.querySelector('.menu-link');
-
 document.querySelector('#menu-icon').onclick = () => {
     menu.classList.toggle('active');
     search.classList.remove('active');
 }
+// *-- end --* //
+
 
 // # 捲動頁面時隱藏 .search-box & .menu-link
 window.onscroll = () => {
     search.classList.remove('active');
     menu.classList.remove('active');
 }
-
 // # 點擊網頁空白處時隱藏 .search-box & .menu-link
 document.addEventListener('click', function (event) {
     const isSearchIcon = event.target.id === 'search-icon';
@@ -35,6 +37,8 @@ document.addEventListener('click', function (event) {
         menu.classList.remove('active');
     }
 });
+// *-- end --* //
+
 
 // # 控制 .sneaker-card 顯示與更換
 const sneakerCards = document.querySelectorAll('.sneaker-card');
@@ -46,7 +50,6 @@ const cardsPerPage = 6;
 
 // # 跳轉至 .sneaker 的頂部
 const sneakerElement = document.querySelector('.sneaker');
-
 function showCards() {
     sneakerCards.forEach((card, index) => {
         if (index >= currentPage * cardsPerPage && index < (currentPage + 1) * cardsPerPage) {
@@ -56,7 +59,6 @@ function showCards() {
         }
     });
 }
-
 function scrollToSneakerTop() {
     sneakerElement.scrollIntoView({
         behavior: 'smooth' 
@@ -78,7 +80,6 @@ function handleNextClick() {
     }
     scrollToSneakerTop();
 }
-
 // 跳到第1頁
 if (prevBtn) {
     prevBtn.addEventListener('click', handlePrevClick);
@@ -87,6 +88,25 @@ if (prevBtn) {
 if (nextBtn) {
     nextBtn.addEventListener('click', handleNextClick);
 }
-
 // 初始顯示第1頁
 showCards();
+// *-- end --* //
+
+
+// # 控制 column.scrollbar 顯示
+function handleScrollbar() {
+    const processContainer = document.querySelector('.process-container');
+    const windowWidth = window.innerWidth;
+
+    // 當 window width < 991px
+    if (windowWidth < 991) {
+        processContainer.classList.add('column-scrollbar');
+    } else {
+        processContainer.classList.remove('column-scrollbar');
+    }
+}
+// 視窗加載完成時執行 handleScrollbar()
+window.addEventListener('DOMContentLoaded', handleScrollbar);
+// 監聽視窗寬度變化
+window.addEventListener('resize', handleScrollbar);
+// *-- end --* //

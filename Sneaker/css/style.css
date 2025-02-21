@@ -40,6 +40,10 @@
     /* shadow */
     --box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
 
+    /* scrollbar */
+    --scrollbar-color-1: hsl(0, 0%, 100%);
+    --scrollbar-color-2: hsl(5, 100%, 69%);
+
     /* testing color */
     --test-bg-color: red;
 
@@ -63,7 +67,6 @@ body {
     color: var(--header-color-1);
 }
 .btn {
-    /* display: flexbox; */
     padding: 10px 40px;
     border-radius: 5px;
     border: 1px solid var(--border-color);
@@ -115,7 +118,6 @@ body {
     color: var(--font-color-1);
     font-size: 1.3rem;
     line-height: 1.1rem;
-
     display: flex;
     column-gap: 1rem;
     padding-inline: 8px;
@@ -132,7 +134,6 @@ body {
     justify-content: center;
     align-items: center;
     padding: 8px 15px;
-    /* display: none; */
 }
 #menu-icon:is(:hover, :focus) {
     color: var(--main-color);
@@ -203,8 +204,7 @@ body {
     flex-direction: column;
 }
 .home-btn{
-    margin-left: auto;
-    /* 使 .home-btn 靠右*/
+    margin-left: auto; /* 使 .home-btn 靠右*/
 }
 .home-img img {
     border-radius: 10px;
@@ -217,8 +217,6 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
     align-items: center;
     gap: 2rem;
-    /* margin-top: 80px;  */
-    /* 讓 about 區塊從 home 區塊下方 80px 開始 */
 }
 .about-img img{
     border-radius: 10px;
@@ -239,7 +237,6 @@ body {
     font-size: 1.2rem;
     color: var(--font-color-2);
     margin: 1rem 0;
-    /* text-shadow: 1px 1px 0 black; */
     text-align: justify;
 }
 .about-btn {
@@ -447,6 +444,12 @@ body {
     color: var(--second-color);
     background: var(--main-color);
 }
+.information-box-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 0.5rem;
+}
 .information-box-content li {
  padding-bottom: 15px;   
 }
@@ -455,20 +458,9 @@ body {
 }
 .information-box-content li a{
     color: var(--font-color-2);
-    /* font-size: 18px; */
 }
 .information-box-content li a:is(:hover, :focus) {
     color: var(--main-color);
-}
-.information-box-contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    row-gap: 0.5rem;
-}
-.information-box-contact i {
-    font-size: 20px;
-    margin-right: 1rem;
 }
 /* ************** */
 /* ************** */
@@ -481,7 +473,7 @@ body {
 }
 /* ************** */
 /* ************** */
-/* DOING: process */
+/* # process */
 .process-title h1{
     font-size: 3.4rem;
     color: var(--main-color);
@@ -494,20 +486,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
 }
 .process-card {
     width: 200px;
     text-align: center;
     padding: 20px;
     display: flex;
-    flex-direction: column; /* 让 step-img-wrapper 和 process-content 垂直排列 */
+    flex-direction: column; /* step-img-wrapper 和 process-content 垂直排列 */
     align-items: center;
+    flex: 0 0 auto;
 }
-/* step 和 img 的包裹容器样式 */
 .step-and-img {
     display: flex;
-    flex-direction: row; /* 让 step 和 img 水平排列 */
+    flex-direction: row;    /* step 和 img 水平排列 */
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
@@ -533,6 +526,35 @@ body {
     line-height: 1.4;
     text-align: justify;
 }
+/* # .column-scrollbar */
+.column-scrollbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: inline proximity;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+.column-scrollbar > .process-card {
+    scroll-snap-align: center;
+}
+.column-scrollbar::-webkit-scrollbar {
+    height: 15px;
+}
+.column-scrollbar::-webkit-scrollbar-track {
+    background: var(--scrollbar-color-1);
+    border-radius: 20px;
+    outline: 2px solid var(--scrollbar-color-2);
+}
+.column-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-color-2);
+    border-radius: 20px;
+    border: 2px solid var(--scrollbar-color-1);
+}
+.column-scrollbar::-webkit-column-scrollbar-button {
+    width: calc(25% - 40px);
+}
 /* ************** */
 /* ************** */
 /* # media */
@@ -544,6 +566,9 @@ body {
         padding: 30px 60px;
     }
     .home-text h1 {
+        font-size: 2.4rem;
+    }
+    .process-title h1 {
         font-size: 2.4rem;
     }
     .about-text h2 {
@@ -564,6 +589,9 @@ body {
         padding: 30px 4%;
     }
     .home-text h1 {
+        font-size: 2rem;
+    }
+    .process-title h1 {
         font-size: 2rem;
     }
     .about-text h2 {
@@ -626,15 +654,6 @@ body {
     .menu-link.active {
         top: 100%;  /* 顯示 menu-link 範圍 */
     }
-    .about-text h2 {
-        font-size: 2rem;
-    }
-    .sneaker-title h2 {
-        font-size: 2rem;
-    }
-    .enthusiast-title h2 {
-        font-size: 2rem;
-    }
 }
 /* 543px ~ 743px enthusiast-container 換行 */
 @media (min-width: 543px) and (max-width: 743px) {
@@ -644,7 +663,6 @@ body {
 }
 @media (max-width: 674px) {
     .about-img {
-        /* about-img 與 about-text 位置互換 */
         order: 2;
     }
 }
@@ -654,13 +672,11 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(250px, auto));
         gap: 1rem;
     }
-
     /* enthusiast-card 的佈局變為垂直方向 */
     .enthusiast-card {
         flex-direction: column;
         column-gap: 15px;
     }
-
     /* 調整 enthusiast-card 内部元素的样式 */
     .enthusiast-card img {
         width: 100px;
@@ -670,18 +686,12 @@ body {
 
         margin-bottom: 1rem;
     }
-
     .enthusiast-card-left,
     .enthusiast-card-right {
         flex: 1;
         width: 100%;
     }
 }
-/* @media (min-width: 375px) and (max-width: 426px) {
-    .information-social-icon {
-        justify-content: space-evenly;
-    }
-} */
 @media (max-width: 360px) {
     .header {
         padding: 11px 4%;
@@ -702,6 +712,10 @@ body {
     .home-text p {
         font-size: 0.8rem;
         font-weight: 300;
+    }
+    .process-title h1 {
+        font-size: 1.4rem;
+        text-shadow:  2px 2px 0 rgb(117, 79, 25);
     }
     .about-text h2 {
         font-size: 1.4rem;
