@@ -257,24 +257,30 @@ body {
     border: 2px solid var(--color-5);
 }
 .sneaker-img {
+    /* * card 內框 * */
     overflow: hidden;   /* 確保圖片放大時不會超出容器範圍 */
     border-radius: 8px;
+    border: 2px solid var(--color-5);
+    background: var(--color-6);
 }
 .sneaker-card img {
-    /* * card 內框 * */
     width: 100%;
     height: 300px;
     object-fit: contain;
     object-position: center;
     padding: 20px;
-    background: var(--color-6);
+    background: transparent;
     border-radius: 8px;
     transition: var(--transition-3);
-    border: 2px solid var(--color-5);
 }
 .sneaker-card img:is(:hover, :focus){
-    /* img 放大效果 */
-    transform: scale(1.1);
+    /* img 放大、旋轉、位移效果 */
+    transform: scale(1.05) rotate(30deg) translateX(15px);
+    padding: 0;
+}
+.sneaker-card:last-child img:is(:hover, :focus){
+    /* last sneaker-card img */
+    transform: scale(1.05) rotate(30deg);
     padding: 0;
 }
 .sneaker-card-link {
@@ -287,6 +293,7 @@ body {
     font-size: 1.2rem;
     border-radius: 5px;
     color: var(--color-5);
+    background: var(--color-6);
     border: 2px solid var(--color-5);
 }
 .sneaker-card-link:is(:hover, :focus) {
