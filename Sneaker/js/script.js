@@ -98,8 +98,8 @@ function handleScrollbar() {
     const processContainer = document.querySelector('.process-container');
     const windowWidth = window.innerWidth;
 
-    // 當 window width < 991px
-    if (windowWidth < 991) {
+    // 當 window width < 1271px
+    if (windowWidth < 1271) {
         processContainer.classList.add('column-scrollbar');
     } else {
         processContainer.classList.remove('column-scrollbar');
