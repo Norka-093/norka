@@ -447,6 +447,12 @@ body {
 .enthusiast-icon {
     color: var(--star-color);
 }
+.enthusiast-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 /** Block-End **/
 /* # information */
 .information {
