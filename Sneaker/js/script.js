@@ -11,6 +11,33 @@ document.querySelector('#search-icon').onclick = () => {
 // *-- end --* //
 
 
+// # 顯示與隱藏 .language-dropdown
+const languageDropdown = document.querySelector('.language-dropdown');
+const languageIcon = document.querySelector('#language-icon');
+
+// 點選 icon 時顯示或隱藏語言下拉選單
+languageIcon.addEventListener('click', function (event) {
+    event.stopPropagation();
+    languageDropdown.classList.toggle('active');
+});
+
+// 捲動頁面時隱藏語言下拉選單
+window.addEventListener('scroll', function () {
+    languageDropdown.classList.remove('active');
+});
+
+// 點選頁面空白處時隱藏語言下拉選單
+document.addEventListener('click', function (event) {
+    const isLanguageIcon = event.target.classList.contains('#language-icon');
+    const isLanguageDropdown = event.target.closest('.language-dropdown');
+
+    if (!isLanguageIcon && !isLanguageDropdown) {
+        languageDropdown.classList.remove('active');
+    }
+});
+// *-- end --* //
+
+
 // # @media (max-width: 768px) > 顯示與隱藏 .menu-link
 const menu =document.querySelector('.menu-link');
 document.querySelector('#menu-icon').onclick = () => {

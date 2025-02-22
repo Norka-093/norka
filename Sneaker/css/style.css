@@ -65,7 +65,7 @@ body {
     border-color: var(--btn-color-1);
 }
 /** Block-End **/
-/* # navbar */
+/* # header */
 .header {
     position: fixed; /* 固定於頁面最上方 */
     z-index: 100;    /* 在所有元素最上方 */
@@ -122,6 +122,38 @@ body {
 }
 #menu-icon:is(:hover, :focus) {
     color: var(--color-3);
+}
+.change-language {
+    position: relative;
+    display: flex;
+}
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background: var(--color-2);
+    width: auto;
+    box-shadow: var(--shadow-color-1);
+    left: -14px;
+    top: 51px;
+    z-index: 1;
+    padding: 5px 10px;
+    transition: var(--transition-3);
+}
+.language-dropdown.active {
+    display: block;
+}
+.language-dropdown a {
+    color: var(--color-5);
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+    padding: 5px;
+}
+.language-dropdown a:is(:hover, :focus) {
+    background: var(--color-3);
+    color: var(--color-6);
 }
 .search-box {
     position: absolute;
