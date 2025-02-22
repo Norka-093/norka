@@ -2,7 +2,7 @@
 
 
 // # 顯示與隱藏 .search-box
-const search =document.querySelector('.search-box');
+const search = document.querySelector('.search-box');
 document.querySelector('#search-icon').onclick = () => {
     search.classList.toggle('active');
     menu.classList.remove('active');
@@ -28,7 +28,7 @@ window.addEventListener('scroll', function () {
 
 // 點選頁面空白處時隱藏語言下拉選單
 document.addEventListener('click', function (event) {
-    const isLanguageIcon = event.target.classList.contains('#language-icon');
+    const isLanguageIcon = event.target.id === 'language-icon';
     const isLanguageDropdown = event.target.closest('.language-dropdown');
 
     if (!isLanguageIcon && !isLanguageDropdown) {

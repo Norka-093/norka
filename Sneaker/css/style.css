@@ -128,7 +128,8 @@ body {
     display: flex;
 }
 .language-dropdown {
-    display: none;
+    opacity: 0; /* 初始狀態設定為不可見 */
+    visibility: hidden;
     position: absolute;
     background: var(--color-2);
     width: auto;
@@ -140,7 +141,8 @@ body {
     transition: var(--transition-3);
 }
 .language-dropdown.active {
-    display: block;
+    opacity: 1; /* 啟動時變為可見 */
+    visibility: visible;
 }
 .language-dropdown a {
     color: var(--color-5);
@@ -162,13 +164,15 @@ body {
     transform: translate(-50%);
     background: var(--color-2);
     width: 100%;
-    display: none;
+    opacity: 0; /* 初始狀態設定為不可見 */
+    visibility: hidden;
+    transition: var(--transition-2);
 }
 .search-box.active {
     top: 100%;
     box-shadow: var(--shadow-color-1);
-    transition: var(--transition-2);
-    display: block;
+    opacity: 1; /* 啟動時變為可見 */
+    visibility: visible;
 }
 .search-box input {
     width: 100%;
