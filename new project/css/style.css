@@ -6,105 +6,42 @@
     list-style: none;
     text-decoration: none;
 }
-body {
-    background: #282d34;
-    color: #fff;
-    font-family: sans-serif;
-    width: 100%;
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
+:root {
+    --primary: #ec994b;
+    --white: #fff;
+    --bg: #f5f5f5;
 }
-.gallery {
-    width: 100%;
+html {
+    font-size: 62.5%;
+    font-family:monospace, sans-serif;
+    scroll-behavior: smooth;
 }
-.gallery-container {
-    display: flex;
-    align-items: center;
-    height: 400px;
-    margin: 0 auto;
-    max-width: 1000px;
-    position: relative;
-
-    /* min-height: 350px; */
-    /* perspective: 1000px;  */
-    /* 3d 效果 */
-    /* overflow: hidden; */
+@media (min-width: 1440px){
+    html {
+        zoom: 1.5;
+    }
 }
-.gallery-item {
-    height: 200px;
-    width: 330px;
-    /* opacity: 0; */
-    position: absolute;
-    z-index: 0;
-    border-radius: 15px;
-    background-size: contain;
-    transition: all 0.3s ease-in-out;
+@media (min-width: 2560px){
+    html {
+        zoom: 1.7;
+    }
 }
-.item-1 {
-    opacity: 0.4;
-    left: 15%;
-    transform: translateX(-50%);
+@media (min-width: 3860px){
+    html {
+        zoom: 2.5;
+    }
 }
-.item-2{
-    width: 380px;
-    height: 250px;
-    /* opacity: 0.8; */
-    left: 30%;
-    z-index: 1;
-    transform: translateX(-50%);
-
+::-webkit-scrollbar {
+    width: 1.3rem;
 }
-.item-3 {
-    width: 400px;
-    height: 300px;
-    opacity: 1;
-    left: 50%;
-    z-index: 2;
-    transform: translateX(-50%);
-
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #797979;
+    transition: all 0.5s ease-in-out;
 }
-.item-4 {
-    width: 380px;
-    height: 250px;
-    /* opacity: 0.8; */
-    left: 70%;
-    z-index: 1;
-    transform: translateX(-50%);
-
+::-webkit-scrollbar-thumb:hover {
+    background: #222224;
 }
-.item-5 {
-    opacity: 0.4;
-    left: 85%;
-    transform: translateX(-50%);
-}
-
-.gallery-controls {
-    display: flex;
-    justify-content: center;
-    margin: 25px 0;
-    height: 100px;
-}
-.gallery-controls buttnon {
-    background-color: transparent;
-    border: 0;
-    cursor: pointer;
-    font-size: 30px;
-    margin: 0 50px;
-    padding: 0 12px;
-    text-transform: capitalize;
-}
-.gallery-controls-btn:focus {
-    outline: none;
-}
-.gallery-controls-prev {
-    position: relative;
-}
-.gallery-controls-prev::before {
-    content: '';
-    border: solid #000;
-    border-width: 0 5px 5px 0;
-    display: inline-block;
-    height: 5px;
-    left: -30px;
+::-webkit-scrollbar-track {
+    background: #f9f9f9;
 }
