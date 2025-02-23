@@ -45,3 +45,10 @@ html {
 ::-webkit-scrollbar-track {
     background: #f9f9f9;
 }
+
+.container {
+    max-width: 124rem;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+/* 09:04 */
