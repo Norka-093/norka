@@ -1,20 +1,16 @@
-// const playpauseBtn = document.getElementById('playpause');
-// const prevBtn = document.getElementById('prev');
-// const nextBtn = document.getElementById('next');
-// const audio = document.getElementById('audio');
+const wrapper = document.querySelector(".wrapper"),
+musicImg = wrapper.querySelector(".img-area img"),
+musicName = wrapper.querySelector(".song-detial .name"),
+musicArtist = wrapper.querySelector(".song-detial .artist");
 
-// playpauseBtn.addEventListener('click', function () {
-//   if (audio.paused) {
-//     audio.play();
-//     playpauseBtn.textContent = '暂停';
-//   } else {
-//     audio.pause();
-//     playpauseBtn.textContent = '播放';
-//   }
-// });
+let musicIndex = 1;
 
-// prevBtn.addEventListener('click', function () {
-// });
+window.addEventListener("load", () => {
+    loadMusic(musicIndex); // call load-music-function once windows loaded
+})
 
-// nextBtn.addEventListener('click', function () {
-// });
+// load-music-function
+function loadMusic(indexNumb){
+    musicName.innerText = allMusic[indexNumb - 1].name;
+    musicArtist.innerText = allMusic[indexNumb - 1].artist;
+}

@@ -240,29 +240,3 @@ ul li .row span p {
 .row .audio-duration{
     font-size: 16px;
 }
-
-/* .player {
-    width: 300px;
-    margin: 50px auto;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .cover img {
-    width: 100%;
-    border-radius: 5px;
-  }
-  .info {
-    text-align: center;
-    margin-top: 10px;
-  }
-  .controls {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-  }
-  button {
-    padding: 5px 10px;
-    font-size: 16px;
-    cursor: pointer;
-  } */
