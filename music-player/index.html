@@ -22,11 +22,14 @@
             </span>
         </div>
         <div class='img-area'>
-            <img src="asset/img/gura.gif" alt="img">
+            <img src="" alt="img">
+            <!-- <img src="asset/img/gura.gif" alt="img"> -->
         </div>
         <div class="song-detial">
-            <p class="name">REFLECT</p>
-            <p class="artist">Gawr Gura</p>
+            <p class="name"></p>
+            <p class="artist"></p>
+            <!-- <p class="name">REFLECT</p>
+            <p class="artist">Gawr Gura</p> -->
         </div>
         <div class="progress-area">
             <div class="progress-bar"></div>
@@ -34,40 +37,26 @@
                 <span class="current">0:00</span>
                 <span class="current">4:08</span>
             </div>
+            <audio id="main-audio" src=""></audio>
+            <!-- <audio src="./asset/music/REFLECT.m4a"></audio> -->
         </div>
         <div class="controls">
-            <span class="material-symbols-outlined">
-                repeat
-            </span>
-            <span class="material-symbols-outlined">
-                skip_previous
-            </span>
+            <span class="material-symbols-outlined">repeat</span>
+            <span id="prev" class="material-symbols-outlined">skip_previous</span>
             <div class="play-pause">
-                <span class="material-symbols-outlined">
-                    play_arrow
-                </span>
-                <!-- <span class="material-symbols-outlined">
-                    pause
-                </span> -->
+                <span class="material-symbols-outlined">play_arrow</span>
+                <!-- play_arrow or pause -->
             </div>
-            <span class="material-symbols-outlined">
-                skip_next
-            </span>
-            <span class="material-symbols-outlined">
-                queue_music
-            </span>
+            <span id="next" class="material-symbols-outlined">skip_next</span>
+            <span class="material-symbols-outlined">queue_music</span>
         </div>
         <div class="music-list">
             <div class="header">
                 <div class="row">
-                    <span class="material-symbols-outlined">
-                        queue_music
-                    </span>
+                    <span class="material-symbols-outlined">queue_music</span>
                     <p>Music List</p>
                 </div>
-                <span id="close" class="material-symbols-outlined">
-                    close
-                </span>
+                <span id="close" class="material-symbols-outlined">close</span>
             </div>
             <ul>
                 <li>

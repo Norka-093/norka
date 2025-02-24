@@ -1,26 +1,32 @@
 const allMusic = [
     {
-        name: "DO U",
-        artist: "Takanashi Kiara",
-        img: "./asset/img/kria.gif",
-        src: "./asset/music/DO-U.mp3",
-    },
-    {
-        name: "mumei",
-        artist: "Nanashi Mumei",
-        img: "./asset/img/mumei.gif",
-        src: "./asset/music/mumei.mp3",
+        name: "REFLECT",
+        artist: "Gawr Gura",
+        img: "gura.gif",
+        src: "REFLECT.m4a",
     },
     {
         name: "ChikuTaku",
         artist: "Watson Amelia",
-        img: "./asset/img/ame.gif",
-        src: "./asset/music/ChikuTaku.mp3",
+        img: "ame.gif",
+        src: "ChikuTaku.mp3",
+    },
+    {
+        name: "DO U",
+        artist: "Takanashi Kiara",
+        img: "kiara.gif",
+        src: "DO-U.mp3",
+    },
+    {
+        name: "mumei",
+        artist: "Nanashi Mumei",
+        img: "mumei.gif",
+        src: "mumei.mp3",
     },
     {
         name: "Daydream",
         artist: "Ouro Kronii",
-        img: "./asset/img/konii.gif",
-        src: "./asset/music/Daydream.m4a",
+        img: "kronii.gif",
+        src: "Daydream.m4a",
     }
 ]
