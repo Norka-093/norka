@@ -197,24 +197,22 @@ for (let i = 0; i < allMusic.length; i++){
                         <span>${allMusic[i].name}</span>
                         <p>${allMusic[i].artist}</p>
                     </div>
-                    <audio class="${allMusic[i].src}" src="./asset/music/${allMusic[i].src}"></audio>
-                    <span id="${allMusic[i].src}" class="audio-duration">0:00</span>
+                    <audio data-src="${allMusic[i].src}" src="./asset/music/${allMusic[i].src}" preload="metadata"></audio>
+                    <span data-src="${allMusic[i].src}" class="audio-duration">0:00</span>
                 </li>`;
     ulTag.insertAdjacentHTML("beforeend", liTag);
 
-    // let liAudioDuaration = ulTag.querySelector(`#${allMusic[i].src}`);
-    // let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
-    let liAudioDuration = ulTag.querySelector(`[data-src="${allMusic[i].src}"]`);
+    let liAudioDuration = ulTag.querySelector(`span[data-src="${allMusic[i].src}"]`);
     let liAudioTag = ulTag.querySelector(`audio[data-src="${allMusic[i].src}"]`);
 
 
-    liAudioTag.addEventListener("loadedmetadata", () => {
+    liAudioTag.onloadedmetadata = () => {
         let audioDuration = liAudioTag.duration;
         let totalMin = Math.floor(audioDuration / 60);
         let totalSec = Math.floor(audioDuration % 60);
         if(totalSec < 10){
             totalSec = `0${totalSec}`;
         }
-        liAudioDuaration.innerText = `${totalMin}:${totalSec}`;
-    });
+        liAudioDuration.innerText = `${totalMin}:${totalSec}`;
+    };
 }
