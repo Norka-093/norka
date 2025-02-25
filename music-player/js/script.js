@@ -5,7 +5,9 @@ musicArtist = wrapper.querySelector(".song-detial .artist"),
 mainAudio = wrapper.querySelector("#main-audio"),
 playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
-nextBtn = wrapper.querySelector("#next");
+nextBtn = wrapper.querySelector("#next"),
+progressBar = wrapper.querySelector(".progress-bar"),
+progressArea = wrapper.querySelector(".progress-area");
 
 
 // 產生 1 ~ 5 之間的隨機整數
@@ -74,4 +76,44 @@ prevBtn.addEventListener("click", () =>{
 });
 
 //# progress bar with music current time
-// 43:08
+mainAudio.addEventListener("timeupdate", (e) => {
+    // console.log(e); // 查看目前音樂撥放進度 ( currentTime 、 duration)
+    const currentTime = e.target.currentTime;
+    const duration = e.target.duration;
+    let progressWidth = (currentTime / duration) *100;
+    progressBar.style.width = `${progressWidth}%`;
+
+    let musicCurrentTime = wrapper.querySelector(".current");
+    musicDuration = wrapper.querySelector(".duration");
+
+    mainAudio.addEventListener("loadeddata", () => {
+        //# 更新歌曲"總"時間
+        let audioDuration = mainAudio.duration;
+        // musicDuration.innerText = audioDuration;
+        let totalMin = Math.floor(audioDuration / 60);
+        let totalSec = Math.floor(audioDuration % 60);
+        if(totalSec < 10){
+            // 若 totalSec 數值小於 10 ，在其前面加上 "0"
+            totalSec = `0${totalSec}`;
+        }
+        musicDuration.innerText = `${totalMin}:${totalSec}`;
+    });
+
+    //# 更新歌曲"初始"時間
+    let currentMin = Math.floor(currentTime / 60);
+    let currentSec = Math.floor(currentTime % 60);
+    if(currentSec < 10){
+        // 若 currentSec 數值小於 10 ，在其前面加上 "0"
+        currentSec = `0${currentSec}`;
+    }
+    musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
+});
+
+//# 移動控制 progressArea > progress-bar
+progressArea.addEventListener("click", (e) => {
+    let progressWidthVal = progressArea.clientWidth; // 進度條長度
+    let clickedOffSetX = e.offsetX;                  // X軸數值
+    let songDuration = mainAudio.duration;           // 歌曲總時間
+
+    mainAudio.currentTime = (clickedOffSetX / progressWidthVal) * songDuration;
+});
