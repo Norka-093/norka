@@ -11,10 +11,10 @@ progressArea = wrapper.querySelector(".progress-area");
 
 
 // 產生 1 ~ 5 之間的隨機整數
-const randomNumber = Math.floor(Math.random() * 5) + 1;
+// const randomNumber = Math.floor(Math.random() * 5) + 1;
 
-let musicIndex = randomNumber;
-// let musicIndex = 4;
+// let musicIndex = randomNumber;
+let musicIndex = 1;
 
 
 window.addEventListener("load", () => {
@@ -119,20 +119,58 @@ progressArea.addEventListener("click", (e) => {
     playMusic();
 });
 
-//# 循環按鈕控制
+//# 循環按鈕圖標控制變換
 const repeatBtn = wrapper.querySelector("#repeat");
 repeatBtn.addEventListener("click", () => {
     let getText = repeatBtn.innerText;
     switch(getText){
         // 改變 repeat icon : repeat -> repeat_one
         case "repeat":
-        repeatBtn.innerText = "repeat_one";
-        break;
+            repeatBtn.innerText = "repeat_one";
+            repeatBtn.setAttribute("title", "Song looped");
+            break;
 
         // 改變 repeat icon : repeat_one -> repeat
         case "repeat_one":
-        repeatBtn.innerText = "repeat";
-        break;
+            repeatBtn.innerText = "shuffle";
+            repeatBtn.setAttribute("title", "Playback shuffle");
+            break;
+
+        // 改變 repeat icon : repeat_one -> repeat
+        case "shuffle":
+            repeatBtn.innerText = "repeat";
+            repeatBtn.setAttribute("title", "Playlist looped");
+            break;
     }
-    // 56:55
+});
+
+
+//# 
+mainAudio.addEventListener("ended", () => {
+    // 
+    let getText = repeatBtn.innerText;
+
+    switch(getText){
+        //  循環播放清單
+        case "repeat":
+            nextMusic();
+            break;
+        //  循環單曲
+        case "repeat_one":
+            mainAudio.currentTime = 0;
+            loadMusic(musicIndex);
+            playMusic();
+            break;
+        //  隨機播放單曲
+        case "shuffle":
+            let randIndex = Math.floor((Math.random() * allMusic.length) + 1);
+            do{
+                randIndex = Math.floor((Math.random() * allMusic.length) + 1);
+            }while(musicIndex == randIndex);
+            musicIndex = randIndex;
+            loadMusic(musicIndex);
+            playMusic();
+            break;
+    }
+
 });
