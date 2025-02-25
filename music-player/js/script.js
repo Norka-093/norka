@@ -13,15 +13,13 @@ showMoreBtn = wrapper.querySelector("#more-music"),
 hideMoreBtn = musicList.querySelector("#close");
 
 
-// 產生 1 ~ 5 之間的隨機整數
-const randomNumber = Math.floor(Math.random() * 5) + 1;
-
-let musicIndex = randomNumber;
+// 產生 allMusic.length 之間的隨機整數
+let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
 // let musicIndex = 1;
 
-
 window.addEventListener("load", () => {
-    loadMusic(musicIndex); // call load-music-function once windows loaded
+    loadMusic(musicIndex);  // call load-music-function once windows loaded
+    playingNow();           // 清單中正在被播放的歌曲
 });
 
 //# load-music-function
@@ -51,6 +49,7 @@ playPauseBtn.addEventListener("click", () => {
     const isMusicPaused = wrapper.classList.contains("paused");
     // if isMusicPaused is true than call isMusicPaused else call playMusic
     isMusicPaused ? pauseMusic() : playMusic();
+    playingNow();
 });
 
 
@@ -61,6 +60,7 @@ function nextMusic(){
     musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
+    playingNow()
 }
 //# prev-music-function
 function prevMusic(){
@@ -69,14 +69,15 @@ function prevMusic(){
     musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
     loadMusic(musicIndex);
     playMusic();
+    playingNow();
 }
-
 nextBtn.addEventListener("click", () =>{
     nextMusic();
 });
 prevBtn.addEventListener("click", () =>{
     prevMusic();
 });
+
 
 //# progress bar with music current time
 mainAudio.addEventListener("timeupdate", (e) => {
@@ -150,7 +151,6 @@ repeatBtn.addEventListener("click", () => {
 
 //# 循環、重複、隨機按鈕功能
 mainAudio.addEventListener("ended", () => {
-    // 
     let getText = repeatBtn.innerText;
 
     switch(getText){
@@ -173,9 +173,9 @@ mainAudio.addEventListener("ended", () => {
             musicIndex = randIndex;
             loadMusic(musicIndex);
             playMusic();
+            playingNow()
             break;
     }
-
 });
 
 
@@ -189,10 +189,9 @@ hideMoreBtn.addEventListener("click", () => {
 });
 //# <ul> 清單內容
 const ulTag = wrapper.querySelector("ul");
-
 for (let i = 0; i < allMusic.length; i++){
     // pass allMusic's song name, artist to <li>
-    let liTag = `<li>
+    let liTag = `<li li-index="${i + 1}">
                     <div class="row">
                         <span>${allMusic[i].name}</span>
                         <p>${allMusic[i].artist}</p>
@@ -205,7 +204,6 @@ for (let i = 0; i < allMusic.length; i++){
     let liAudioDuration = ulTag.querySelector(`span[data-src="${allMusic[i].src}"]`);
     let liAudioTag = ulTag.querySelector(`audio[data-src="${allMusic[i].src}"]`);
 
-
     liAudioTag.onloadedmetadata = () => {
         let audioDuration = liAudioTag.duration;
         let totalMin = Math.floor(audioDuration / 60);
@@ -214,5 +212,39 @@ for (let i = 0; i < allMusic.length; i++){
             totalSec = `0${totalSec}`;
         }
         liAudioDuration.innerText = `${totalMin}:${totalSec}`;
+        liAudioDuration.setAttribute("t-duration", `${totalMin}:${totalSec}`);
     };
 }
+
+//# 增加 <li> 屬性: playing，表示該歌曲正在被播放
+const allLiTag = ulTag.querySelectorAll("li");
+// console.log(allLiTag); // 查看目清單中所有 <li>
+function playingNow(){
+    for (let j = 0; j < allLiTag.length; j++) {
+        let audioTag = allLiTag[j].querySelector(".audio-duration")
+        if(allLiTag[j].classList.contains("playing")){
+            allLiTag[j].classList.remove("playing");
+            audioTag.innerText = "";
+
+            let adDuration = audioTag.getAttribute("t-duration");
+            audioTag.innerText = adDuration;
+        }
+        if(allLiTag[j].getAttribute("li-index") == musicIndex){
+            allLiTag[j].classList.add("playing");
+            audioTag.innerText = "Playing";
+        }
+    
+        allLiTag[j].setAttribute("onclick", "clicked(this)");
+    }
+}
+
+//# 在清單中選擇歌曲播放
+function clicked(element){
+    let getLiIndex = element.getAttribute("li-index");
+    musicIndex = getLiIndex;
+    loadMusic(musicIndex);
+    playMusic();
+    playingNow();
+}
+
+
