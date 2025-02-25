@@ -7,14 +7,17 @@ playPauseBtn = wrapper.querySelector(".play-pause"),
 prevBtn = wrapper.querySelector("#prev"),
 nextBtn = wrapper.querySelector("#next"),
 progressBar = wrapper.querySelector(".progress-bar"),
-progressArea = wrapper.querySelector(".progress-area");
+progressArea = wrapper.querySelector(".progress-area"),
+musicList = wrapper.querySelector(".music-list"),
+showMoreBtn = wrapper.querySelector("#more-music"),
+hideMoreBtn = musicList.querySelector("#close");
 
 
 // 產生 1 ~ 5 之間的隨機整數
-// const randomNumber = Math.floor(Math.random() * 5) + 1;
+const randomNumber = Math.floor(Math.random() * 5) + 1;
 
-// let musicIndex = randomNumber;
-let musicIndex = 1;
+let musicIndex = randomNumber;
+// let musicIndex = 1;
 
 
 window.addEventListener("load", () => {
@@ -86,7 +89,7 @@ mainAudio.addEventListener("timeupdate", (e) => {
     let musicCurrentTime = wrapper.querySelector(".current");
     musicDuration = wrapper.querySelector(".duration");
 
-    mainAudio.addEventListener("loadeddata", () => {
+    mainAudio.addEventListener("loadedmetadata", () => {
         //# 更新歌曲"總"時間
         let audioDuration = mainAudio.duration;
         // musicDuration.innerText = audioDuration;
@@ -145,7 +148,7 @@ repeatBtn.addEventListener("click", () => {
 });
 
 
-//# 
+//# 循環、重複、隨機按鈕功能
 mainAudio.addEventListener("ended", () => {
     // 
     let getText = repeatBtn.innerText;
@@ -174,3 +177,44 @@ mainAudio.addEventListener("ended", () => {
     }
 
 });
+
+
+//# 顯示 & 關閉 播放清單，按鈕功能
+showMoreBtn.addEventListener("click", () => {
+    musicList.classList.toggle("show");
+});
+hideMoreBtn.addEventListener("click", () => {
+    // showMoreBtn.click();
+    musicList.classList.remove("show");
+});
+//# <ul> 清單內容
+const ulTag = wrapper.querySelector("ul");
+
+for (let i = 0; i < allMusic.length; i++){
+    // pass allMusic's song name, artist to <li>
+    let liTag = `<li>
+                    <div class="row">
+                        <span>${allMusic[i].name}</span>
+                        <p>${allMusic[i].artist}</p>
+                    </div>
+                    <audio class="${allMusic[i].src}" src="./asset/music/${allMusic[i].src}"></audio>
+                    <span id="${allMusic[i].src}" class="audio-duration">0:00</span>
+                </li>`;
+    ulTag.insertAdjacentHTML("beforeend", liTag);
+
+    // let liAudioDuaration = ulTag.querySelector(`#${allMusic[i].src}`);
+    // let liAudioTag = ulTag.querySelector(`.${allMusic[i].src}`);
+    let liAudioDuration = ulTag.querySelector(`[data-src="${allMusic[i].src}"]`);
+    let liAudioTag = ulTag.querySelector(`audio[data-src="${allMusic[i].src}"]`);
+
+
+    liAudioTag.addEventListener("loadedmetadata", () => {
+        let audioDuration = liAudioTag.duration;
+        let totalMin = Math.floor(audioDuration / 60);
+        let totalSec = Math.floor(audioDuration % 60);
+        if(totalSec < 10){
+            totalSec = `0${totalSec}`;
+        }
+        liAudioDuaration.innerText = `${totalMin}:${totalSec}`;
+    });
+}

@@ -88,7 +88,7 @@ body {
 }
 .progress-area .progress-bar{
     height: inherit;
-    width: 50%;
+    width: 0%;
     position: relative;
     background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
     border-radius: inherit;
@@ -113,11 +113,13 @@ body {
     display: flex;
     text-align: center;
     justify-content: space-between;
-    padding: 5px 0;
+    margin: 10px 0;
+    pointer-events: none;
 }
 .timer span {
     font-size: 1.2rem;
     color: var(--lightblack);
+    pointer-events: none;
 }
 .controls {
     display: flex;
