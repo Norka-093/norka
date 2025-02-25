@@ -116,4 +116,23 @@ progressArea.addEventListener("click", (e) => {
     let songDuration = mainAudio.duration;           // 歌曲總時間
 
     mainAudio.currentTime = (clickedOffSetX / progressWidthVal) * songDuration;
+    playMusic();
+});
+
+//# 循環按鈕控制
+const repeatBtn = wrapper.querySelector("#repeat");
+repeatBtn.addEventListener("click", () => {
+    let getText = repeatBtn.innerText;
+    switch(getText){
+        // 改變 repeat icon : repeat -> repeat_one
+        case "repeat":
+        repeatBtn.innerText = "repeat_one";
+        break;
+
+        // 改變 repeat icon : repeat_one -> repeat
+        case "repeat_one":
+        repeatBtn.innerText = "repeat";
+        break;
+    }
+    // 56:55
 });
