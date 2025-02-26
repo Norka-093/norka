@@ -1,20 +1,20 @@
 const wrapper = document.querySelector(".wrapper"),
-musicImg = wrapper.querySelector(".img-area img"),
-musicName = wrapper.querySelector(".song-detial .name"),
-musicArtist = wrapper.querySelector(".song-detial .artist"),
-mainAudio = wrapper.querySelector("#main-audio"),
-playPauseBtn = wrapper.querySelector(".play-pause"),
-prevBtn = wrapper.querySelector("#prev"),
-nextBtn = wrapper.querySelector("#next"),
-progressBar = wrapper.querySelector(".progress-bar"),
-progressArea = wrapper.querySelector(".progress-area"),
-musicList = wrapper.querySelector(".music-list"),
-showMoreBtn = wrapper.querySelector("#more-music"),
-hideMoreBtn = musicList.querySelector("#close");
-
+      musicImg = wrapper.querySelector(".img-area img"),
+      musicName = wrapper.querySelector(".song-detial .name"),
+      musicArtist = wrapper.querySelector(".song-detial .artist"),
+      mainAudio = wrapper.querySelector("#main-audio"),
+      playPauseBtn = wrapper.querySelector(".play-pause"),
+      prevBtn = wrapper.querySelector("#prev"),
+      nextBtn = wrapper.querySelector("#next"),
+      progressBar = wrapper.querySelector(".progress-bar"),
+      progressArea = wrapper.querySelector(".progress-area"),
+      musicList = wrapper.querySelector(".music-list"),
+      showMoreBtn = wrapper.querySelector("#more-music"),
+      hideMoreBtn = musicList.querySelector("#close"),
+      repeatBtn = wrapper.querySelector("#repeat");
 
 // 產生 allMusic.length 之間的隨機整數
-let musicIndex = Math.floor((Math.random() * allMusic.length) + 1);
+let musicIndex = Math.floor(Math.random() * allMusic.length) + 1;
 // let musicIndex = 1;
 
 window.addEventListener("load", () => {
@@ -24,69 +24,59 @@ window.addEventListener("load", () => {
 
 //# load-music-function
 function loadMusic(indexNumb){
-    musicName.innerText = allMusic[indexNumb - 1].name;
-    musicArtist.innerText = allMusic[indexNumb - 1].artist;
-    musicImg.src = `./asset/img/${allMusic[indexNumb - 1].img}`;
-    mainAudio.src = `./asset/music/${allMusic[indexNumb - 1].src}`;
+    let musicData = allMusic[indexNumb - 1];
+    musicName.innerText = musicData.name;
+    musicArtist.innerText = musicData.artist;
+    musicImg.src = `./asset/img/${musicData.img}`;
+    mainAudio.src = `./asset/music/${musicData.src}`;
 }
 
 //# play-music-function
 function playMusic(){
     wrapper.classList.add("paused");
     mainAudio.play();
-    playPauseBtn.querySelector("span").innerText = "pause";
+    playPauseBtn.querySelector("span").textContent = "pause";
 }
 //# pause-music-function
 function pauseMusic(){
     wrapper.classList.remove("paused");
     mainAudio.pause();
-    playPauseBtn.querySelector("span").innerText = "play_arrow";    
+    playPauseBtn.querySelector("span").textContent = "play_arrow";
 }
 
 
 //# Play & Pause Btn event
 playPauseBtn.addEventListener("click", () => {
-    const isMusicPaused = wrapper.classList.contains("paused");
-    // if isMusicPaused is true than call isMusicPaused else call playMusic
-    isMusicPaused ? pauseMusic() : playMusic();
+    wrapper.classList.contains("paused") ? pauseMusic() : playMusic();
     playingNow();
 });
 
 
 //# next-music-function
 function nextMusic(){
-    musicIndex ++;
-    // if musicIndex is > array length than musicIndex = 1 and play frist song
-    musicIndex > allMusic.length ? musicIndex = 1 : musicIndex = musicIndex;
-    loadMusic(musicIndex);
-    playMusic();
-    playingNow()
-}
-//# prev-music-function
-function prevMusic(){
-    musicIndex --;
-    // if musicIndex is <  1 than musicIndex = array length and play last song
-    musicIndex < 1 ? musicIndex = allMusic.length : musicIndex = musicIndex;
+    musicIndex = (musicIndex % allMusic.length) + 1;
     loadMusic(musicIndex);
     playMusic();
     playingNow();
 }
-nextBtn.addEventListener("click", () =>{
-    nextMusic();
-});
-prevBtn.addEventListener("click", () =>{
-    prevMusic();
-});
+//# prev-music-function
+function prevMusic(){
+    musicIndex = musicIndex - 1 === 0 ? allMusic.length : musicIndex - 1;
+    loadMusic(musicIndex);
+    playMusic();
+    playingNow();
+}
+nextBtn.addEventListener("click", nextMusic);
+prevBtn.addEventListener("click", prevMusic);
 
 
 //# progress bar with music current time
 mainAudio.addEventListener("timeupdate", (e) => {
     // console.log(e); // 查看目前音樂撥放進度 ( currentTime 、 duration)
-    const currentTime = e.target.currentTime;
-    const duration = e.target.duration;
-    let progressWidth = (currentTime / duration) *100;
+    const { currentTime, duration } = e.target;
+    let progressWidth = (currentTime / duration) * 100;
     progressBar.style.width = `${progressWidth}%`;
-
+    
     let musicCurrentTime = wrapper.querySelector(".current");
     musicDuration = wrapper.querySelector(".duration");
 
@@ -106,87 +96,59 @@ mainAudio.addEventListener("timeupdate", (e) => {
     //# 更新歌曲"初始"時間
     let currentMin = Math.floor(currentTime / 60);
     let currentSec = Math.floor(currentTime % 60);
-    if(currentSec < 10){
-        // 若 currentSec 數值小於 10 ，在其前面加上 "0"
-        currentSec = `0${currentSec}`;
-    }
-    musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
+    // 若 currentSec 數值小於 10 ，在其前面加上 "0"
+    if(currentSec < 10){currentSec = `0${currentSec}`;} 
+    
+    // musicCurrentTime.innerText = `${currentMin}:${currentSec}`;
+    wrapper.querySelector(".current").innerText = `${currentMin}:${currentSec}`;
 });
 
 //# 移動控制 progressArea > progress-bar
 progressArea.addEventListener("click", (e) => {
-    let progressWidthVal = progressArea.clientWidth; // 進度條長度
-    let clickedOffSetX = e.offsetX;                  // X軸數值
-    let songDuration = mainAudio.duration;           // 歌曲總時間
-
-    mainAudio.currentTime = (clickedOffSetX / progressWidthVal) * songDuration;
-    playMusic();
+    let songDuration = mainAudio.duration;
+    mainAudio.currentTime = (e.offsetX / progressArea.clientWidth) * songDuration;
+    if (wrapper.classList.contains("paused")) playMusic();
 });
 
 //# 循環按鈕圖標控制變換
-const repeatBtn = wrapper.querySelector("#repeat");
 repeatBtn.addEventListener("click", () => {
-    let getText = repeatBtn.innerText;
-    switch(getText){
-        // 改變 repeat icon : repeat -> repeat_one
-        case "repeat":
-            repeatBtn.innerText = "repeat_one";
-            repeatBtn.setAttribute("title", "Song looped");
-            break;
-
-        // 改變 repeat icon : repeat_one -> repeat
-        case "repeat_one":
-            repeatBtn.innerText = "shuffle";
-            repeatBtn.setAttribute("title", "Playback shuffle");
-            break;
-
-        // 改變 repeat icon : repeat_one -> repeat
-        case "shuffle":
-            repeatBtn.innerText = "repeat";
-            repeatBtn.setAttribute("title", "Playlist looped");
-            break;
-    }
+    let states = ["repeat", "repeat_one", "shuffle"];
+    let currentState = states.indexOf(repeatBtn.innerText);
+    repeatBtn.innerText = states[(currentState + 1) % states.length];
 });
 
 
 //# 循環、重複、隨機按鈕功能
 mainAudio.addEventListener("ended", () => {
-    let getText = repeatBtn.innerText;
-
-    switch(getText){
-        //  循環播放清單
+    switch (repeatBtn.innerText) {
         case "repeat":
             nextMusic();
             break;
-        //  循環單曲
         case "repeat_one":
             mainAudio.currentTime = 0;
-            loadMusic(musicIndex);
             playMusic();
             break;
-        //  隨機播放單曲
         case "shuffle":
-            let randIndex = Math.floor((Math.random() * allMusic.length) + 1);
-            do{
-                randIndex = Math.floor((Math.random() * allMusic.length) + 1);
-            }while(musicIndex == randIndex);
-            musicIndex = randIndex;
+            if (allMusic.length > 1) {
+                let randIndex;
+                do {
+                    randIndex = Math.floor(Math.random() * allMusic.length) + 1;
+                } while (musicIndex === randIndex);
+                musicIndex = randIndex;
+            }
             loadMusic(musicIndex);
             playMusic();
-            playingNow()
+            playingNow();
             break;
     }
 });
 
 
 //# 顯示 & 關閉 播放清單，按鈕功能
-showMoreBtn.addEventListener("click", () => {
-    musicList.classList.toggle("show");
-});
-hideMoreBtn.addEventListener("click", () => {
-    // showMoreBtn.click();
-    musicList.classList.remove("show");
-});
+showMoreBtn.addEventListener("click", () => musicList.classList.toggle("show"));
+hideMoreBtn.addEventListener("click", () => musicList.classList.remove("show"));
+
+
 //# <ul> 清單內容
 const ulTag = wrapper.querySelector("ul");
 for (let i = 0; i < allMusic.length; i++){
@@ -246,5 +208,3 @@ function clicked(element){
     playMusic();
     playingNow();
 }
-
-
