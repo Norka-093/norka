@@ -214,9 +214,12 @@ body {
     font-size: 19px;
     color: var(--lightblack);
 }
-header .row span {
+.header .row span {
     cursor: default;
-    margin-left: 5px;
+}
+.header p {
+    color: var(--lightblack);
+    opacity: 0.9;
 }
 #close {
     font-size: 22px;
@@ -248,7 +251,7 @@ header .row span {
 .music-list ul li .row span {
     font-size: 17px;
 }
-ul li .row span p {
+ul li .row span {
     opacity: 0.9;
 }
 .row .audio-duration{

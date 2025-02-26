@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
+    <!-- 撥放器 1 -->
     <div class="wrapper">
         <div class="top-bar">
             <span class="material-symbols-outlined">
@@ -51,21 +52,80 @@
             <span id="next" class="material-symbols-outlined">skip_next</span>
             <span id="more-music" class="material-symbols-outlined">queue_music</span>
         </div>
-        <div class="music-list">
+        <!-- 播放清單 1 -->
+        <button class="more-music" data-target="playlist1">播放清單 1</button>
+        <div id="playlist1" class="music-list">
             <div class="header">
                 <div class="row">
                     <span class="material-symbols-outlined">queue_music</span>
-                    <p>Music List</p>
                 </div>
+                <p>Music List 1</p>
                 <span id="close" class="material-symbols-outlined">close</span>
             </div>
             <ul>
-                
+                <!-- 清單內容由JS控制 -->
+            </ul>
+        </div>
+    </div>
+    <!-- 撥放器 2 -->
+    <div class="wrapper">
+        <div class="top-bar">
+            <span class="material-symbols-outlined">
+                keyboard_arrow_down
+            </span>
+            <p>Now Playing</p>
+            <span class="material-symbols-outlined">
+                more_horiz
+            </span>
+        </div>
+        <div class='img-area'>
+            <img src="" alt="img">
+            <!-- <img src="asset/img/gura.gif" alt="img"> -->
+        </div>
+        <div class="song-detial">
+            <p class="name"></p>
+            <p class="artist"></p>
+            <!-- <p class="name">REFLECT</p>
+            <p class="artist">Gawr Gura</p> -->
+        </div>
+        <div class="progress-area">
+            <div class="progress-bar"></div>
+            <div class="timer">
+                <span class="current">0:00</span>
+                <span class="duration"></span>
+            </div>
+            <audio id="main-audio" src=""></audio>
+            <!-- <audio src="./asset/music/REFLECT.m4a"></audio> -->
+        </div>
+        <div class="controls">
+            <span id="repeat" class="material-symbols-outlined" title="playlist-loop">repeat</span>
+            <!-- repeat | shuffle | repeat_one -->
+            <span id="prev" class="material-symbols-outlined">skip_previous</span>
+            <div class="play-pause">
+                <span class="material-symbols-outlined">play_arrow</span>
+                <!-- play_arrow | pause -->
+            </div>
+            <span id="next" class="material-symbols-outlined">skip_next</span>
+            <span id="more-music" class="material-symbols-outlined">queue_music</span>
+        </div>
+        <!-- 播放清單 2 -->
+        <button class="more-music" data-target="playlist2">播放清單 2</button>
+        <div id="playlist2" class="music-list">
+            <div class="header">
+                <div class="row">
+                    <span class="material-symbols-outlined">queue_music</span>
+                </div>
+                <p>Music List 2</p>
+                <span id="close" class="material-symbols-outlined">close</span>
+            </div>
+            <ul>
+                <!-- 清單內容由JS控制 -->
             </ul>
         </div>
     </div>
     
-    <script src="js/music-list.js"></script>
+    <script src="js/music-list-1.js"></script>
+    <script src="js/music-list-2.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
