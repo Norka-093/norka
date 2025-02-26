@@ -43,6 +43,8 @@ body {
     top: 1;
     left: 2%;
     row-gap: 10px;
+    cursor: pointer;
+    /* user-select: all; */
 }
 .select-list span {
     width: 2.5rem;
@@ -60,8 +62,19 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 5px var(--black);
 }
+.select-list img:is(:hover, :focus) {
+    box-shadow: 0 0 5px var(--violet);
+}
+/*# 輪播 */
+.carousel {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
 /*# 播放器 */
 .wrapper {
+    min-width: calc(100% / 5); /* 預設: 大型裝置顯示5個 */
     width: 380px;
     overflow: hidden;
     position: relative;
@@ -69,6 +82,8 @@ body {
     padding: 25px 30px;
     background: var(--white);
     box-shadow: 0px 6px 15px var(--lightbshadow);
+    transition: transform 0.3s ease-in-out;
+    /* text-align: center; */
 }
 .wrapper span {
     cursor: pointer;
