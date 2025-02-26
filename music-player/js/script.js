@@ -196,9 +196,15 @@ mainAudio.addEventListener("ended", () => {
 });
 
 
-//# 顯示 & 關閉 播放清單，按鈕功能
+//# 顯示播放清單
 showMoreBtn.addEventListener("click", () => musicList.classList.toggle("show"));
-hideMoreBtn.addEventListener("click", () => musicList.classList.remove("show"));
+// hideMoreBtn.addEventListener("click", () => musicList.classList.remove("show"));
+//# 隱藏播放清單（點擊關閉按鈕或點擊外部區域）
+document.addEventListener("click", (e) => {
+    if (e.target === hideMoreBtn || (!musicList.contains(e.target) && e.target !== showMoreBtn)) {
+        musicList.classList.remove("show");
+    }
+});
 
 
 //# <ul> 清單內容

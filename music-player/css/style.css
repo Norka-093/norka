@@ -222,6 +222,10 @@ header .row span {
     font-size: 22px;
     color: var(--lightblack);
 }
+#close:is(:hover, :focus) {
+    font-weight: 700;
+    color: var(--violet);
+}
 .music-list ul {
     margin: 10px 0;
     max-height: 260px;
