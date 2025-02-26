@@ -103,12 +103,62 @@ mainAudio.addEventListener("timeupdate", (e) => {
     wrapper.querySelector(".current").innerText = `${currentMin}:${currentSec}`;
 });
 
-//# 移動控制 progressArea > progress-bar
+
+//# event start : 點擊控制、拖動控制，歌曲進度條
+// 監聽點擊事件，直接變更歌曲進度
 progressArea.addEventListener("click", (e) => {
-    let songDuration = mainAudio.duration;
-    mainAudio.currentTime = (e.offsetX / progressArea.clientWidth) * songDuration;
+    updateProgress(e);
     if (wrapper.classList.contains("paused")) playMusic();
 });
+
+// 記錄是否正在拖動
+let isDragging = false;
+// 監聽滑鼠或手指按下事件，開始拖動
+progressArea.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    updateProgress(e);
+});
+progressArea.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    updateProgress(e.touches[0]); // 取得第一個觸控點
+});
+
+// 監聽滑鼠或手指移動事件，更新進度條（僅當 isDragging 為 true 時才觸發）
+document.addEventListener("mousemove", (e) => {
+    if (isDragging) updateProgress(e);
+});
+document.addEventListener("touchmove", (e) => {
+    if (isDragging) updateProgress(e.touches[0]);
+});
+
+// 監聽滑鼠或手指鬆開事件，結束拖動
+document.addEventListener("mouseup", () => {
+    if (isDragging) {
+        isDragging = false;
+        if (wrapper.classList.contains("paused")) playMusic();
+    }
+});
+document.addEventListener("touchend", () => {
+    if (isDragging) {
+        isDragging = false;
+        if (wrapper.classList.contains("paused")) playMusic();
+    }
+});
+
+// 更新進度條函式
+function updateProgress(e) {
+    let songDuration = mainAudio.duration;
+    let progressWidth = progressArea.clientWidth;
+    let offsetX = e.clientX - progressArea.getBoundingClientRect().left;
+    
+    // 確保 offsetX 在 0 到 progressWidth 之間，避免超出範圍
+    offsetX = Math.max(0, Math.min(offsetX, progressWidth));
+    
+    mainAudio.currentTime = (offsetX / progressWidth) * songDuration;
+    let progressPercent = (offsetX / progressWidth) * 100;
+    progressBar.style.width = `${progressPercent}%`;
+}
+//# end : 點擊控制、拖動控制，歌曲進度條
 
 //# 循環按鈕圖標控制變換
 repeatBtn.addEventListener("click", () => {
