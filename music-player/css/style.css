@@ -27,6 +27,25 @@ body {
     min-height: 100vh;
     user-select: none;
 }
+/*# 清單選擇 */
+.select-list {
+    width: 100px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(75deg, var(--pink) 0%, var(--violet) 100%);
+    box-shadow: 0px 6px 12px var(--lightblack);
+    border-radius: 15px;
+    position: absolute;
+    top: 1;
+    left: 2%;
+}
+.select-list a {
+    color: var(--black);
+}
+/*# 播放器 */
 .wrapper {
     width: 380px;
     overflow: hidden;
