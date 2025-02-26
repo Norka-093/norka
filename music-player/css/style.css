@@ -190,6 +190,7 @@ body {
     background: var(--white);
     border-radius: 15px;
     box-shadow: 0 -5px 10px rgba(0,0,0,0.1);
+    z-index: 3;
 }
 .music-list.show {
     /* show music-list with JS  */

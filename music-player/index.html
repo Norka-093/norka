@@ -7,12 +7,11 @@
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- google font icon -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=keyboard_arrow_down,more_horiz,repeat,skip_previous,play_arrow,skip_next,queue_music" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 <body>
     <!-- 撥放器 1 -->
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper-1">
         <div class="top-bar">
             <span class="material-symbols-outlined">
                 keyboard_arrow_down
@@ -68,7 +67,7 @@
         </div>
     </div>
     <!-- 撥放器 2 -->
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper-2">
         <div class="top-bar">
             <span class="material-symbols-outlined">
                 keyboard_arrow_down
@@ -80,13 +79,10 @@
         </div>
         <div class='img-area'>
             <img src="" alt="img">
-            <!-- <img src="asset/img/gura.gif" alt="img"> -->
         </div>
         <div class="song-detial">
             <p class="name"></p>
             <p class="artist"></p>
-            <!-- <p class="name">REFLECT</p>
-            <p class="artist">Gawr Gura</p> -->
         </div>
         <div class="progress-area">
             <div class="progress-bar"></div>
@@ -95,15 +91,12 @@
                 <span class="duration"></span>
             </div>
             <audio id="main-audio" src=""></audio>
-            <!-- <audio src="./asset/music/REFLECT.m4a"></audio> -->
         </div>
         <div class="controls">
             <span id="repeat" class="material-symbols-outlined" title="playlist-loop">repeat</span>
-            <!-- repeat | shuffle | repeat_one -->
             <span id="prev" class="material-symbols-outlined">skip_previous</span>
             <div class="play-pause">
                 <span class="material-symbols-outlined">play_arrow</span>
-                <!-- play_arrow | pause -->
             </div>
             <span id="next" class="material-symbols-outlined">skip_next</span>
             <span id="more-music" class="material-symbols-outlined">queue_music</span>
@@ -124,8 +117,7 @@
         </div>
     </div>
     
-    <script src="js/music-list-1.js"></script>
-    <script src="js/music-list-2.js"></script>
+    <script src="js/music-list.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
