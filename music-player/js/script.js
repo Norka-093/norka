@@ -116,6 +116,7 @@ let isDragging = false;
 // 監聽滑鼠或手指按下事件，開始拖動
 progressArea.addEventListener("mousedown", (e) => {
     isDragging = true;
+    progressArea.classList.add("active");       // 新增 active，讓進度條更醒目(css)
     updateProgress(e);
 });
 progressArea.addEventListener("touchstart", (e) => {
@@ -135,6 +136,7 @@ document.addEventListener("touchmove", (e) => {
 document.addEventListener("mouseup", () => {
     if (isDragging) {
         isDragging = false;
+        progressArea.classList.remove("active"); // 拖動結束時移除 active
         if (wrapper.classList.contains("paused")) playMusic();
     }
 });

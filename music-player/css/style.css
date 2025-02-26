@@ -25,6 +25,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    user-select: none;
 }
 .wrapper {
     width: 380px;
@@ -93,21 +94,28 @@ body {
     background: linear-gradient(90deg, var(--pink) 0%, var(--violet) 100%);
     border-radius: inherit;
 }
+/*# 調整進度條圓點大小，讓其更容易拖動 */
 .progress-bar::before {
     content: '';
     position: absolute;
-    height: 12px;
-    width: 12px;
+    height: 14px;
+    width: 14px;
     border-radius: 50%;
     top: 50%;
-    right: -5px;
+    right: -7px;
     transform: translateY(-50%);
     background: inherit;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
-.progress-area:is(:hover, :focus) .progress-bar::before {
+/*# 當滑鼠或觸控時，顯示拖動圓點 */
+.progress-area:is(:hover, :focus, .active) .progress-bar::before {
     opacity: 1;
+    transform: translateY(-50%) scale(1.2); /* 拖動時放大 */
+}
+/*# 當用戶拖動時，進度條變亮 (JS控制) */
+.progress-area.active {
+    background: rgba(255, 116, 164, 0.3);
 }
 .progress-area .timer {
     display: flex;
