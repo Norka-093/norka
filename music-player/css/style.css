@@ -18,7 +18,7 @@
     --darkwhite: #cecaca;
     --lightwhite: #f0f0f0;
     --pinkshadow: #ffcbdd;
-    --lightshadow: rgba(0, 0, 0, 0.4);
+    --lightbshadow: rgba(0, 0, 0, .15);
 }
 body {
     display: flex;
@@ -27,132 +27,14 @@ body {
     min-height: 100vh;
     user-select: none;
 }
-/*# 清單選擇 */
-.select-list {
-    width: auto;
-    height: auto;
-    padding: 7px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--white);
-    box-shadow: 0px 6px 12px var(--lightblack);
-    border-radius: 50px;
-    position: absolute;
-    top: 1;
-    left: 2%;
-    row-gap: 10px;
-    cursor: pointer;
-    /* user-select: all; */
-}
-.select-list span {
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 2.4rem;
-    background: var(--darkwhite);
-    box-shadow: 0 0 5px var(--black);
-    border-radius: 50%;
-    text-align: center;
-    align-content: center;
-}
-.select-list img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    box-shadow: 0 0 5px var(--black);
-}
-.select-list img:is(:hover, :focus) {
-    box-shadow: 0 0 5px var(--violet);
-}
-/*# 輪播 */
-.carousel-box {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 90%;
-    position: relative;
-    scroll-behavior: smooth;
-    gap: 10px; */
-    /* max-width: 1200px;
-    margin: auto; */
-
-    perspective: 1000px; /* 3D 透視效果 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    scroll-behavior: smooth;
-    gap: 10px;
-    /* overflow: hidden; */
-}
-/* 按鈕樣式 */
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 20;
-    border-radius: 50%;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-#prevBtn { left: 5%; }
-#nextBtn { right: 5%; }
-/*# 播放器 */
 .wrapper {
     width: 380px;
-    height: 500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform-style: preserve-3d;
-    transform: translate(-50%, -50%) scale(0.8);
-    transition: transform 0.5s ease-in-out, z-index 0.3s;
-    background: var(--white);
+    overflow: hidden;
+    position: relative;
     border-radius: 15px;
     padding: 25px 30px;
-    box-shadow: 0px 10px 20px var(--lightshadow);
-}
-
-/* 主要的卡片 */
-.wrapper.active {
-    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
-    z-index: 10;
-}
-
-/* 左側卡片 */
-.wrapper.prev {
-    transform: translate(-110%, -50%) scale(0.7) rotateY(-13deg);
-}
-
-.wrapper.prev:nth-child(2) {
-    transform: translate(-140%, -50%) scale(0.6) rotateY(-18deg);
-}
-
-/* 右側卡片 */
-.wrapper.next {
-    transform: translate(30%, -50%) scale(0.7) rotateY(13deg);
-}
-
-.wrapper.next:nth-child(2) {
-    transform: translate(60%, -50%) scale(0.6) rotateY(18deg);
-}
-
-/* 隱藏未顯示的卡片 */
-.wrapper.hidden {
-    display: none;
+    background: var(--white);
+    box-shadow: 0px 6px 15px var(--lightbshadow);
 }
 .wrapper span {
     cursor: pointer;
@@ -171,7 +53,7 @@ button:hover {
     color: var(--lightblack);
 }
 .img-area {
-    height: 200px;
+    height: 256px;
     width: 100%;
     border: 2px solid var(--black);
     border-radius: 15px;
@@ -379,34 +261,4 @@ ul li .row span {
 ul li.playing {
     color: var(--violet);
     pointer-events: none;
-}
-/*# RWD */
-/* 小裝置：只有1張 */
-@media (max-width: 767px) {
-    .wrapper.prev {
-        transform: translate(-150%, -50%) scale(0.5) rotateY(-20deg);
-    }
-    .wrapper.next {
-        transform: translate(50%, -50%) scale(0.5) rotateY(20deg);
-    }
-}
-
-/* 中裝置：顯示3張 */
-@media (min-width: 768px) and (max-width: 1199px) {
-    .wrapper.prev {
-        transform: translate(-80%, -50%) scale(0.7) rotateY(-15deg);
-    }
-    .wrapper.next {
-        transform: translate(30%, -50%) scale(0.7) rotateY(15deg);
-    }
-}
-
-/* 大裝置：顯示5張 */
-@media (min-width: 1200px) {
-    .wrapper.prev:nth-child(2) {
-        transform: translate(-160%, -50%) scale(0.6) rotateY(-18deg);
-    }
-    .wrapper.next:nth-child(2) {
-        transform: translate(60%, -50%) scale(0.6) rotateY(18deg);
-    }
 }
