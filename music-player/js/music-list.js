@@ -1,3 +1,4 @@
+// allMusic2 : hololive歌曲
 const allMusic1 = [
     {
         name: "REFLECT",
@@ -31,6 +32,7 @@ const allMusic1 = [
     }
 ];
 
+// allMusic2 : 中文歌曲
 const allMusic2 = [
     {
         name: "Catwalk",
@@ -56,4 +58,31 @@ const allMusic2 = [
         img: "零一九零貳.jpg",
         src: "忘川彼岸-DJ版.mp3",
     }
+];
+// allMusic3 : 英文歌曲
+const allMusic3 = [
+    {
+        name: "Natural",
+        artist: "Imagine Dragons",
+        img: "Imagine Dragons.jpg",
+        src: "Natural.mp3",
+    },
+];
+// allMusic4 : 韓文歌曲
+const allMusic4 = [
+    {
+        name: "Natual",
+        artist: "鳥屎&XICO ft.阿樂",
+        img: "catwalk.jpg",
+        src: "Catwalk.m4a",
+    },
+];
+// allMusic5 : 洗腦歌曲
+const allMusic5 = [
+    {
+        name: "Natual",
+        artist: "鳥屎&XICO ft.阿樂",
+        img: "catwalk.jpg",
+        src: "Catwalk.m4a",
+    },
 ];

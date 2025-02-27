@@ -2,10 +2,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper1 = document.querySelector("#wrapper-1");
     const wrapper2 = document.querySelector("#wrapper-2");
+    const wrapper3 = document.querySelector("#wrapper-3");
+    const wrapper4 = document.querySelector("#wrapper-4");
+    const wrapper5 = document.querySelector("#wrapper-5");
 
     const musicLists = {
         wrapper1: allMusic1,  // 對應音樂清單 1
-        wrapper2: allMusic2   // 對應音樂清單 2
+        wrapper2: allMusic2,  // 對應音樂清單 2
+        wrapper3: allMusic3,  // 對應音樂清單 3
+        wrapper4: allMusic4,  // 對應音樂清單 4
+        wrapper5: allMusic5,  // 對應音樂清單 5
     };
 
     // 處理每個 wrapper 的音樂播放邏輯
@@ -293,4 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 處理各個 wrapper 的邏輯
     handleMusicWrapper(wrapper1, musicLists.wrapper1);
     handleMusicWrapper(wrapper2, musicLists.wrapper2);
+    handleMusicWrapper(wrapper3, musicLists.wrapper3);
+    handleMusicWrapper(wrapper4, musicLists.wrapper4);
+    handleMusicWrapper(wrapper5, musicLists.wrapper5);
 });
