@@ -296,32 +296,65 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //# 輪播圖
 const wrappers = document.querySelectorAll(".wrapper");
-let currentIndex = 0;
+let totalWrappers = wrappers.length;
+let currentIndex = 2; // 初始索引為中間
+let visibleCards = 5; // 預設顯示 5 張
 
+// 設定不同裝置的顯示數量
+function updateVisibleCards() {
+    const width = window.innerWidth;
+    if (width >= 1200) {
+        visibleCards = 5;
+    } else if (width >= 768) {
+        visibleCards = 3;
+    } else {
+        visibleCards = 1;
+    }
+    updateCarousel();
+}
+
+// 更新輪播
 function updateCarousel() {
-    wrappers.forEach((wrapper, index) => {
-        wrapper.classList.remove("active", "prev", "next");
+    let halfVisible = Math.floor(visibleCards / 2);
 
-        if (index === currentIndex) {
+    wrappers.forEach((wrapper, index) => {
+        wrapper.classList.remove("active", "prev", "next", "hidden");
+        wrapper.style.zIndex = "0";
+
+        let position = (index - currentIndex + totalWrappers) % totalWrappers;
+
+        if (position === 0) {
             wrapper.classList.add("active");
-        } else if (index === (currentIndex - 1 + wrappers.length) % wrappers.length) {
-            wrapper.classList.add("prev");
-        } else if (index === (currentIndex + 1) % wrappers.length) {
+            wrapper.style.zIndex = "10";
+        } else if (position <= halfVisible) {
             wrapper.classList.add("next");
+            wrapper.style.zIndex = `${10 - position}`;
+        } else if (position >= totalWrappers - halfVisible) {
+            wrapper.classList.add("prev");
+            wrapper.style.zIndex = `${10 - (totalWrappers - position)}`;
+        } else {
+            wrapper.classList.add("hidden");
         }
     });
 }
 
+// 上一張
 document.getElementById("prevBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length;
+    currentIndex = (currentIndex - 1 + totalWrappers) % totalWrappers;
     updateCarousel();
 });
 
+// 下一張
 document.getElementById("nextBtn").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % wrappers.length;
+    currentIndex = (currentIndex + 1) % totalWrappers;
     updateCarousel();
 });
 
-// 初始化顯示
-updateCarousel();
+// 監聽視窗變化
+window.addEventListener("resize", updateVisibleCards);
+
+// 初始化
+updateVisibleCards();
+
+
 

@@ -84,6 +84,8 @@ body {
     align-items: center;
     width: 100%;
     position: relative;
+    scroll-behavior: smooth;
+    gap: 10px;
     /* overflow: hidden; */
 }
 /* 按鈕樣式 */
@@ -110,9 +112,6 @@ button:hover {
 #nextBtn { right: 5%; }
 /*# 播放器 */
 .wrapper {
-     /* 預設: 大型裝置顯示5個 */
-    /* min-width: calc(100% / 3.5); */
-
     width: 380px;
     height: 500px;
     position: absolute;
@@ -126,19 +125,34 @@ button:hover {
     padding: 25px 30px;
     box-shadow: 0px 10px 20px var(--lightshadow);
 }
+
+/* 主要的卡片 */
 .wrapper.active {
     transform: translate(-50%, -50%) scale(1) rotateY(0deg);
     z-index: 10;
 }
 
+/* 左側卡片 */
 .wrapper.prev {
     transform: translate(-110%, -50%) scale(0.7) rotateY(-13deg);
-    z-index: 5;
 }
 
+.wrapper.prev:nth-child(2) {
+    transform: translate(-140%, -50%) scale(0.6) rotateY(-18deg);
+}
+
+/* 右側卡片 */
 .wrapper.next {
     transform: translate(30%, -50%) scale(0.7) rotateY(13deg);
-    z-index: 5;
+}
+
+.wrapper.next:nth-child(2) {
+    transform: translate(60%, -50%) scale(0.6) rotateY(18deg);
+}
+
+/* 隱藏未顯示的卡片 */
+.wrapper.hidden {
+    display: none;
 }
 .wrapper span {
     cursor: pointer;
@@ -366,16 +380,33 @@ ul li.playing {
     color: var(--violet);
     pointer-events: none;
 }
-/* RWD: 中型裝置顯示 3 個 */
-@media (max-width: 1024px) {
-    .wrapper {
-        min-width: calc(100% / 3);
+/*# RWD */
+/* 小裝置：只有1張 */
+@media (max-width: 767px) {
+    .wrapper.prev {
+        transform: translate(-150%, -50%) scale(0.5) rotateY(-20deg);
+    }
+    .wrapper.next {
+        transform: translate(50%, -50%) scale(0.5) rotateY(20deg);
     }
 }
 
-/* RWD: 小型裝置顯示 1 個 */
-@media (max-width: 768px) {
-    .wrapper {
-        min-width: 80%;
+/* 中裝置：顯示3張 */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .wrapper.prev {
+        transform: translate(-80%, -50%) scale(0.7) rotateY(-15deg);
+    }
+    .wrapper.next {
+        transform: translate(30%, -50%) scale(0.7) rotateY(15deg);
+    }
+}
+
+/* 大裝置：顯示5張 */
+@media (min-width: 1200px) {
+    .wrapper.prev:nth-child(2) {
+        transform: translate(-160%, -50%) scale(0.6) rotateY(-18deg);
+    }
+    .wrapper.next:nth-child(2) {
+        transform: translate(60%, -50%) scale(0.6) rotateY(18deg);
     }
 }
