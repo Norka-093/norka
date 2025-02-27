@@ -45,9 +45,15 @@ const allMusic2 = [
         src: "那年·少年.m4a",
     },
     {
+        name: "淒美地",
+        artist: "郭頂",
+        img: "郭頂.png",
+        src: "淒美地.mp3",
+    },
+    {
         name: "忘川彼岸",
         artist: "零一九零貳",
-        img: "忘川彼岸.jpg",
+        img: "零一九零貳.jpg",
         src: "忘川彼岸-DJ版.mp3",
     }
 ];
