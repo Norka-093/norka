@@ -1,4 +1,4 @@
-//# 適用於多個播放清單
+//# 播放器
 document.addEventListener("DOMContentLoaded", () => {
     const wrapper1 = document.querySelector("#wrapper-1");
     const wrapper2 = document.querySelector("#wrapper-2");
@@ -280,13 +280,13 @@ document.addEventListener("DOMContentLoaded", () => {
             let getLiIndex = element.getAttribute("li-index");
             musicIndex = getLiIndex;
             loadMusic(musicIndex);
-            playMusic();
             playingNow();
+            playMusic();
         };
 
         // 初始化
         loadMusic(musicIndex);
-        playingNow();
+        playMusic();
         playingNow();
     };
 
