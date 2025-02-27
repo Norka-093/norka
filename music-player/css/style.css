@@ -18,7 +18,7 @@
     --darkwhite: #cecaca;
     --lightwhite: #f0f0f0;
     --pinkshadow: #ffcbdd;
-    --lightbshadow: rgba(0, 0, 0, .15);
+    --lightshadow: rgba(0, 0, 0, 0.4);
 }
 body {
     display: flex;
@@ -66,24 +66,79 @@ body {
     box-shadow: 0 0 5px var(--violet);
 }
 /*# 輪播 */
-.carousel {
-    display: flex;
+.carousel-box {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    width: 90%;
     position: relative;
+    scroll-behavior: smooth;
+    gap: 10px; */
+    /* max-width: 1200px;
+    margin: auto; */
+
+    perspective: 1000px; /* 3D 透視效果 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    position: relative;
+    /* overflow: hidden; */
 }
+/* 按鈕樣式 */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 20;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+#prevBtn { left: 5%; }
+#nextBtn { right: 5%; }
 /*# 播放器 */
 .wrapper {
-    min-width: calc(100% / 5); /* 預設: 大型裝置顯示5個 */
+     /* 預設: 大型裝置顯示5個 */
+    /* min-width: calc(100% / 3.5); */
+
     width: 380px;
-    overflow: hidden;
-    position: relative;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: transform 0.5s ease-in-out, z-index 0.3s;
+    background: var(--white);
     border-radius: 15px;
     padding: 25px 30px;
-    background: var(--white);
-    box-shadow: 0px 6px 15px var(--lightbshadow);
-    transition: transform 0.3s ease-in-out;
-    /* text-align: center; */
+    box-shadow: 0px 10px 20px var(--lightshadow);
+}
+.wrapper.active {
+    transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+    z-index: 10;
+}
+
+.wrapper.prev {
+    transform: translate(-110%, -50%) scale(0.7) rotateY(-13deg);
+    z-index: 5;
+}
+
+.wrapper.next {
+    transform: translate(30%, -50%) scale(0.7) rotateY(13deg);
+    z-index: 5;
 }
 .wrapper span {
     cursor: pointer;
@@ -102,7 +157,7 @@ body {
     color: var(--lightblack);
 }
 .img-area {
-    height: 256px;
+    height: 200px;
     width: 100%;
     border: 2px solid var(--black);
     border-radius: 15px;
@@ -310,4 +365,17 @@ ul li .row span {
 ul li.playing {
     color: var(--violet);
     pointer-events: none;
+}
+/* RWD: 中型裝置顯示 3 個 */
+@media (max-width: 1024px) {
+    .wrapper {
+        min-width: calc(100% / 3);
+    }
+}
+
+/* RWD: 小型裝置顯示 1 個 */
+@media (max-width: 768px) {
+    .wrapper {
+        min-width: 80%;
+    }
 }

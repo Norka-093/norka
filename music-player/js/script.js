@@ -294,3 +294,34 @@ document.addEventListener("DOMContentLoaded", () => {
     handleMusicWrapper(wrapper1, musicLists.wrapper1);
     handleMusicWrapper(wrapper2, musicLists.wrapper2);
 });
+//# 輪播圖
+const wrappers = document.querySelectorAll(".wrapper");
+let currentIndex = 0;
+
+function updateCarousel() {
+    wrappers.forEach((wrapper, index) => {
+        wrapper.classList.remove("active", "prev", "next");
+
+        if (index === currentIndex) {
+            wrapper.classList.add("active");
+        } else if (index === (currentIndex - 1 + wrappers.length) % wrappers.length) {
+            wrapper.classList.add("prev");
+        } else if (index === (currentIndex + 1) % wrappers.length) {
+            wrapper.classList.add("next");
+        }
+    });
+}
+
+document.getElementById("prevBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length;
+    updateCarousel();
+});
+
+document.getElementById("nextBtn").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % wrappers.length;
+    updateCarousel();
+});
+
+// 初始化顯示
+updateCarousel();
+
