@@ -36,7 +36,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("./MusicPlayer/data/img/bg.gif");
+    background-image: url("../data/img/bg.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -135,7 +135,7 @@ body{
     position: relative;
     top: 0;
     left: 0;
-    background: url("./MusicPlayer/data/img/home.jpg") no-repeat;
+    background: url("../data/img/home.jpg") no-repeat;
     background-color: #fff;
     background-size: cover;
     background-position: center;
