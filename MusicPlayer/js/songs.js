@@ -6,7 +6,7 @@ const songs = {
             title: "REFLECT",
             artist: "Gawr Gura",
             img_src: "gura.gif",
-            audio_src: "REFLECT.m4a",
+            audio_src: "REFLECT.mp3",
         },
         {
             title: "ChikuTaku",
@@ -18,7 +18,7 @@ const songs = {
             title: "VIOLET",
             artist: "Ninomae Ina'nis",
             img_src: "ina-2.gif",
-            audio_src: "VIOLET.m4a",
+            audio_src: "VIOLET.mp3",
         },
         {
             title: "DO-U",
@@ -30,7 +30,7 @@ const songs = {
             title: "end of a life",
             artist: "Mori Calliope",
             img_src: "calli.gif",
-            audio_src: "end-of-a-life.m4a",
+            audio_src: "end-of-a-life.mp3",
         },
         {
             title: "mumei",
@@ -42,7 +42,7 @@ const songs = {
             title: "Daydream",
             artist: "Ouro Kronii",
             img_src: "kronii.gif",
-            audio_src: "Daydream.m4a",
+            audio_src: "Daydream.mp3",
         },
         {
             title: "679",
@@ -66,7 +66,7 @@ const songs = {
             title: "MECONOPSIS",
             artist: "Ninomae Ina'nis",
             img_src: "ina.gif",
-            audio_src: "MECONOPSIS.m4a",
+            audio_src: "MECONOPSIS.mp3",
         },
     ],
     // 中文歌曲
@@ -87,7 +87,7 @@ const songs = {
             title: "Catwalk",
             artist: "鳥屎 & XICO",
             img_src: "catwalk.jpg",
-            audio_src: "Catwalk.m4a",
+            audio_src: "Catwalk.mp3",
         },
     ],
     // 英文歌曲
