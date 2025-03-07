@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="shortcut icon" href="/data/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <i class="fa-solid fa-bars menu-btn"></i>
+            <i class="fa-solid fa-ellipsis"></i>
+        </div>
+        <div class="cover-box">
+            <div class="cover-image">
+            </div>
+        </div>
+        <div class="choose-list"  id="draglist">
+            <a href="#" data-list="songs1">Hololive</a>
+            <a href="#" data-list="songs2">中文歌曲</a>
+            <a href="#" data-list="songs3">英文歌曲</a>
+            <a href="#" data-list="songs4">韓文歌曲</a>
+            <a href="#" data-list="songs5">網路歌曲</a>
+        </div>
+        <ul id="song-list"></ul>
+        <div class="player-body">
+        </div>
+        <div class="list-wrapper">
+            <table class="list" id="playlist">
+                <tr class="song">
+                    <td class="no">
+                        <h5>1</h5>
+                    </td>
+                    <td class="title">
+                        <h6>Song Title</h6>
+                    </td>
+                    <td class="length">
+                        <h6>3:00</h6>
+                    </td>
+                    <td>
+                        <i class="fi fi-ss-heart"></i>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="bar">
+            <div class="dot"></div>
+            <div class="time">
+                <h5 class="current-time">0:00</h5>
+                <h5 class="duration">3:00</h5>
+            </div>
+        </div>
+        <div class="info">
+            <h2>Music Player</h2>
+            <h3>&copy; 2025 By NORKA</h3>
+        </div>
+        <div class="control">
+            <i class="fa-solid fa-backward" id="prev"></i>
+            <i class="fa-solid fa-play" id="playpause"></i>
+            <i class="fa-solid fa-forward" id="next"></i>
+        </div>
+        <div class="more-control">
+            <i class="fi fi-ss-heart" id="current-favourite"></i>
+            <i class="fi fi-br-shuffle" id="shuffle"></i>
+            <i class="fi fi-br-arrows-repeat" id="repeat"></i>
+            <i class="fi fi-ss-volume" id="volume"></i>
+             <!-- 音量滑塊 -->
+            <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+        </div>
+        <p class="current-song-title">song title</p>
+    </div>
+
+    <script src="js/songs.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
