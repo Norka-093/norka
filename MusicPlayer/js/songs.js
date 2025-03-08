@@ -89,6 +89,18 @@ const songs = {
             img_src: "catwalk.jpg",
             audio_src: "Catwalk.mp3",
         },
+        {
+            title: "剛好遇見你",
+            artist: "李玉剛",
+            img_src: "李玉剛.jpg",
+            audio_src: "剛好遇見你.mp3",
+        },
+        {
+            title: "該死的溫柔",
+            artist: "Jackson Wang / 王嘉爾",
+            img_src: "王嘉爾.png",
+            audio_src: "該死的溫柔.mp3",
+        },
     ],
     // 英文歌曲
     songs3: [
