@@ -80,6 +80,11 @@ function updatePlaylist(songList) {
         playing = false;
         playPauseBtn.classList.add("fa-play");
         playPauseBtn.classList.remove("fa-pause");
+        setTimeout(() => {
+            if (isNaN(audioForDuration.duration) || audioForDuration.duration === 0) {
+                tr.querySelector(".length h6").innerText = formatTime(audioForDuration.duration);
+            }
+        }, 1000);
     });
     if (songList.length > 0 && currentSong < songList.length) {
         const songRows = playListContainer.querySelectorAll('.song');
@@ -105,7 +110,7 @@ function loadSong(num) {
     coverImage.style.backgroundImage = `url(./data/img/${song.img_src})`;
     audio.src = `./data/music/${song.audio_src}`;
     audio.currentTime = 0;
-    progressDot.style.left = "0%";
+    progressBar.style.left = "0%";
     current_Time.innerHTML = "0:00";
     currentFavourite.classList.toggle("active", getCurrentFavourites().includes(num));
     const songRows = playListContainer.querySelectorAll('.song');
@@ -238,8 +243,9 @@ function updateRepeatIcon() {
 }
 
 // **歌曲進度條
-const progressBar = document.querySelector(".bar"),
-    progressDot = document.querySelector(".bar .dot"),
+const progressBar = document.getElementById("progress-bar"),
+    // progressBar = document.querySelector(".bar"),
+    // progressDot = document.getElementById("progress-bar"),
     current_Time = document.querySelector(".current-time"),
     current_Duration = document.querySelector(".duration");
 function progress(){
@@ -249,19 +255,37 @@ function progress(){
     current_Time.innerHTML = formatTime(currentTime);
     current_Duration.innerHTML = formatTime(duration);
     let progressPercentage = (currentTime / duration) * 100;
-    progressDot.style.left = `${progressPercentage}%`;
+    // progressDot.style.left = `${progressPercentage}%`;
+    progressBar.value = progressPercentage;
 }
 audio.addEventListener("timeupdate", progress);
 
 // **更新歌曲進度
-function setProgressDot(e) {
-    let width = this.clientWidth;
+let isDraggingProgress = false;
+
+progressBar.addEventListener("mousedown", (e) => {
+    isDraggingProgress = true;
+});
+
+document.addEventListener("mouseup", () => {
+    isDraggingProgress = false;
+});
+
+progressBar.addEventListener("mousemove", (e) => {
+    if (!isDraggingProgress) return;
+    // setProgressDot(e);
+    setProgressBar(e);
+});
+function setProgressBar(e) {
+    // let width = this.clientWidth;
+    let width = progressBar.clientWidth;
     let clickX = e.offsetX;
     let duration = audio.duration;
     if (isNaN(duration) || duration <= 0) return;
+    let newTime = (clickX / width) * duration;
     audio.currentTime = (clickX / width) * duration;
 }
-progressBar.addEventListener("click", setProgressDot);
+progressBar.addEventListener("click", setProgressBar);
 
 // **左右拖移播放清單
 const box = document.getElementById("draglist");
@@ -317,4 +341,10 @@ document.addEventListener('click', function (event) {
         volumeSlider.style.pointerEvents = 'none';
         volumeIcon.classList.remove("active");
     }
+});
+volumeSlider.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    let step = e.deltaY > 0 ? -0.05 : 0.05;
+    audio.volume = Math.min(1, Math.max(0, audio.volume + step));
+    volumeSlider.value = audio.volume;
 });
