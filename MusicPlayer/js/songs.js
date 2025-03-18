@@ -113,6 +113,18 @@ const songs = {
             img_src: "胡彥斌.jpg",
             audio_src: "你要的全拿走.mp3",
         },
+        {
+            title: "麒麟",
+            artist: "早安",
+            img_src: "早安.jpg",
+            audio_src: "麒麟.mp3",
+        },
+        {
+            title: "電梯戰神",
+            artist: "寶石Gem",
+            img_src: "寶石Gem.jpg",
+            audio_src: "電梯戰神.mp3",
+        },
     ],
     // 英文歌曲
     songs3: [
