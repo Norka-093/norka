@@ -220,6 +220,11 @@ audio.addEventListener("ended", () => {
     } else if (currentSong < songs[currentPlaylist].length - 1) {
         nextSong();
         audio.play();
+    } else if (shuffle) {
+        // 當播放到最後首歌曲且開啟隨機播放功能時，重新隨機選擇一首歌曲
+        currentSong = Math.floor(Math.random() * songs[currentPlaylist].length);
+        loadSong(currentSong);
+        audio.play();
     }
     updateRepeatIcon();
     if (currentSong === songs[currentPlaylist].length - 1 && repeat === 0) {
