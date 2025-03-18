@@ -68,6 +68,12 @@ const songs = {
             img_src: "ina.gif",
             audio_src: "MECONOPSIS.mp3",
         },
+        {
+            title: "Help!!",
+            artist: "Kobo Kanaeru",
+            img_src: "kobo.gif",
+            audio_src: "Help!!.mp3",
+        },
     ],
     // 中文歌曲
     songs2: [
