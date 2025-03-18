@@ -122,6 +122,12 @@ const songs = {
             img_src: "Imagine-Dragons.jpg",
             audio_src: "Natural.mp3",
         },
+        {
+            title: "The Nights",
+            artist: "Avicii",
+            img_src: "Avicii.jpg",
+            audio_src: "The-Nights.mp3",
+        },
     ],
     // 韓文歌曲
     songs4: [
@@ -130,6 +136,12 @@ const songs = {
             artist: "정국 / Jung Kook / 征國",
             img_src: "JungKook.webp",
             audio_src: "Seven.mp3",
+        },
+        {
+            title: "APT",
+            artist: "ROSÉ & Bruno Mars",
+            img_src: "ROSÉ&Bruno-Mars.png",
+            audio_src: "APT.mp3",
         },
     ],
     // 網路歌曲
