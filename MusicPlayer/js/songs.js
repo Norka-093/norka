@@ -145,7 +145,7 @@ const songs = {
     songs4: [
         {
             title: "Seven",
-            artist: "정국 / Jung Kook / 征國",
+            artist: "정국 / Jung Kook / 田柾國",
             img_src: "JungKook.webp",
             audio_src: "Seven.mp3",
         },
@@ -156,6 +156,13 @@ const songs = {
             audio_src: "APT.mp3",
         },
     ],
-    // 網路歌曲
-    songs5: []
+    // 純音樂
+    songs5: [
+        {
+            title: "告白の夜",
+            artist: "Ayasa / 島村絢沙",
+            img_src: "Ayasa.jpg",
+            audio_src: "告白の夜.mp3",
+        },
+    ]
 }
