@@ -101,6 +101,12 @@ const songs = {
             img_src: "王嘉爾.png",
             audio_src: "該死的溫柔.mp3",
         },
+        {
+            title: "你要的全拿走",
+            artist: "Tiger Hu / 胡彥斌",
+            img_src: "胡彥斌.jpg",
+            audio_src: "你要的全拿走.mp3",
+        },
     ],
     // 英文歌曲
     songs3: [
