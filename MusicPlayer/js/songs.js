@@ -125,6 +125,12 @@ const songs = {
             img_src: "寶石Gem.jpg",
             audio_src: "電梯戰神.mp3",
         },
+        {
+            title: "易燃易爆炸",
+            artist: "華晨宇",
+            img_src: "華晨宇.jpg",
+            audio_src: "易燃易爆炸.mp3",
+        },
     ],
     // 英文歌曲
     songs3: [
